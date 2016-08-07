@@ -3,35 +3,30 @@ package alerter
 import (
 	"fmt"
 	"net/smtp"
+
+	"github.com/mdelillo/apartment-alert/config"
 )
 
 type EmailAlerter struct {
-	SMTPUsername  string
-	SMTPPassword  string
-	SMTPHost      string
-	SMTPPort      int
-	SMTPSender    string
-	SMTPRecipient string
-	SendMail      func(string, smtp.Auth, string, []string, []byte) error
+	Config   *config.Config
+	SendMail func(string, smtp.Auth, string, []string, []byte) error
 }
 
 func (e *EmailAlerter) Send(body string) error {
-	fmt.Printf("email config: %+v\n", e)
-	fmt.Printf("sending body: [%s]\n", body)
 	auth := smtp.PlainAuth(
 		"",
-		e.SMTPUsername,
-		e.SMTPPassword,
-		e.SMTPHost,
+		e.Config.SMTPUsername,
+		e.Config.SMTPPassword,
+		e.Config.SMTPHost,
 	)
 	return e.SendMail(
-		fmt.Sprintf("%s:%d", e.SMTPHost, e.SMTPPort),
+		fmt.Sprintf("%s:%d", e.Config.SMTPHost, e.Config.SMTPPort),
 		auth,
-		e.SMTPSender,
-		[]string{e.SMTPRecipient},
+		e.Config.SMTPSender,
+		[]string{e.Config.SMTPRecipient},
 		[]byte(fmt.Sprintf("To: %s\nFrom: %s\nSubject: New apartment(s)\n\n%s",
-			e.SMTPRecipient,
-			e.SMTPSender,
+			e.Config.SMTPRecipient,
+			e.Config.SMTPSender,
 			body,
 		)),
 	)

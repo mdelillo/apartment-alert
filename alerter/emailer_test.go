@@ -5,6 +5,7 @@ import (
 	"net/smtp"
 
 	"github.com/mdelillo/apartment-alert/alerter"
+	"github.com/mdelillo/apartment-alert/config"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
@@ -15,12 +16,14 @@ var _ = Describe("EmailAlerter", func() {
 
 	BeforeEach(func() {
 		emailer = &alerter.EmailAlerter{
-			SMTPUsername:  "some-smtp-username",
-			SMTPPassword:  "some-smtp-password",
-			SMTPHost:      "some-smtp-host",
-			SMTPPort:      12345,
-			SMTPSender:    "some-smtp-sender",
-			SMTPRecipient: "some-smtp-recipient",
+			Config: &config.Config{
+				SMTPUsername:  "some-smtp-username",
+				SMTPPassword:  "some-smtp-password",
+				SMTPHost:      "some-smtp-host",
+				SMTPPort:      12345,
+				SMTPSender:    "some-smtp-sender",
+				SMTPRecipient: "some-smtp-recipient",
+			},
 		}
 	})
 
