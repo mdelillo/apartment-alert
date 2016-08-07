@@ -1,0 +1,2691 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:v="urn:schemas-microsoft-com:vml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
+
+  <head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"e7a120bfc3","applicationID":"194324","transactionName":"dAwNREANVFtWQhYTXFkXAlxBTVtFXENKDVBEFwpeVT1LUlJCWglcRDwAX18SV1lWXk0=","queueTime":0,"applicationTime":691,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQMBVl5ACQoEV1NW"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(s){try{i("ierr",[s,(new Date).getTime(),!0])}catch(c){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,e,n){u&&(d+=1)}),s.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),s.on(m,function(){this.bstStart=Date.now()}),s.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t(17)(a),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){if(t[1]){var n=t[1];if("function"==typeof n){var r=c(n,"nr@wrapped",function(){return s(n,"fn-",null,n.name||"anonymous")});this.wrapped=t[1]=r}else"function"==typeof n.handleEvent&&s.inPlace(n,["handleEvent"],"fn-")}}),a.on(d+"-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",s)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&"function"==typeof t&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;e.exports=function(t){function e(t,e,n,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof n?n(r,a):n||{}}catch(u){d([u,"",[r,a,o],s])}f(e+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(l){throw f(e+"err",[r,a,l],s),l}finally{f(e+"end",[r,a,c],s)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,u(t,nrWrapper),nrWrapper)}function n(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function f(e,n,r){if(!c){c=!0;try{t.emit(e,n,r)}catch(o){d([o,e,n,r])}c=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){d([r])}for(var o in t)s.call(t,o)&&(e[o]=t[o]);return e}function d(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),e.inPlace=n,e.flag=a,e}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),s=a.length,c=0;c<s;c++)a[c].apply(i,r);var u=f[w[n]];return u&&u.push([v,n,r,i]),i}function d(t,e){m[t]=l(t).concat(e)}function l(t){return m[t]||[]}function p(t){return u[t]=u[t]||o(n)}function h(t,e){c(t,function(t,n){e=e||"feature",w[n]=e,e in f||(f[e]=[])})}var m={},w={},v={on:d,emit:n,get:p,listeners:l,context:e,buffer:h};return v}function i(){return new r}var a="nr@context",s=t("gos"),c=t(15),f={},u={},d=e.exports=o();d.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!g++){var t=y.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){c(w,function(e,n){t[e]||(t[e]=n)});var n="https"===m.split(":")[0]||t.sslForHttp;y.proto=n?"https://":"http://",s("mark",["onload",a()],null,"api");var r=u.createElement("script");r.src=y.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===u.readyState&&i()}function i(){s("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var s=t("handle"),c=t(15),f=window,u=f.document,d="addEventListener",l="attachEvent",p=f.XMLHttpRequest,h=p&&p.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:p,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(12);var m=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-963.min.js"},v=p&&h&&h[d]&&!/CriOS/.test(navigator.userAgent),y=e.exports={offset:a(),origin:m,features:{},xhrWrappable:v};u[d]?(u[d]("DOMContentLoaded",i,!1),f[d]("load",r,!1)):(u[l]("onreadystatechange",o),f[l]("onload",r)),s("mark",["firstbyte",a()],null,"api");var g=0},{}]},{},["loader",2,10,4,3]);</script>
+
+      <title>Chelsea, West Village, and Flatiron Apartments for Rent | StreetEasy</title>
+
+      <meta name="description" content="Browse photos of 8 apartments for rent in Chelsea, West Village by using detailed search filters to find your future home | StreetEasy" />
+
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: { families: ['Source Sans Pro:300,400,700'] },
+        active: function () { performance.mark('fontsVisible'); }
+      });
+    </script>
+
+    <!-- Impressions Tracking Config -->
+<script>
+  var SE_Tracker = (function(host){
+    var now = new Date().getTime();
+    var cache = [];
+
+    function inCache(key){
+      for(var i in cache){
+        if(cache[i] == key){
+          return true;
+        }
+      }
+      return false;
+    }
+
+    function post(url, params, callback){
+      if(inCache(params.key)){
+        return false;
+      }
+
+      cache.push(params.key);
+
+      var request;
+
+      if(window.XDomainRequest) {
+        request = new XDomainRequest();
+      } else {
+        request = new XMLHttpRequest();
+      }
+
+      request.withCredentials = true;
+      request.open('POST', url, true);
+      request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
+
+      request.onload = callback;
+
+      request.onerror = function(xhr, status, err) {
+        console.error(xhr, status, err.toString())
+      }
+
+      var query_string = [];
+
+      for(var key in params){
+        query_string.push(key + '=' + encodeURIComponent(params[key]));
+      }
+
+      request.send(query_string.join('&'));
+    }
+
+    return {
+      push: function(key){
+        new Image().src = ['//', host, '/in/', key, '?r=', now].join('');
+      },
+      track: function(params){
+        post('/api/v2/events/track', params)
+      },
+      cache_keys: cache
+    }
+  })('tracker-legacy.streeteasy.com');
+</script>
+<!-- Impressions Tracking Config -->
+
+
+    <link rel="apple-touch-icon" href="//cdn-assets0.streeteasy.com/images/152.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="//cdn-assets0.streeteasy.com/images/76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="//cdn-assets0.streeteasy.com/images/120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="//cdn-assets0.streeteasy.com/images/152.png">
+
+    <script src="//ox-d.trulia.servedbyopenx.com/w/1.0/jstag?nc=7449-StreetEasy1"></script>
+<script type="text/javascript">
+ var googletag = googletag || {};
+ googletag.cmd = googletag.cmd || [];
+ (function() {
+   var gads = document.createElement("script");
+   gads.async = true;
+   gads.type = "text/javascript";
+   var useSSL = "https:" == document.location.protocol;
+   gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+   var node =document.getElementsByTagName("script")[0];
+   node.parentNode.insertBefore(gads, node);
+  })();
+</script>
+
+    <link href="//cdn-assets2.streeteasy.com/assets/app-4d76e211ad1d8862d4827c6500c140a0.css" media="all" rel="stylesheet" type="text/css" />
+
+    <meta name="Rating" content="General" />
+    <meta name="se-ios-app" content="app-id=660363289">
+    <meta name="google-site-verification" content="qJqlO5mEO2tCALBAsjgwNeLSWDuHOzKBDvR3t7v-vck" />
+
+    <link rel="Home" href="http://streeteasy.com" />
+
+    <link href="http://streeteasy.com/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <link rel="search" type="application/opensearchdescription+xml" title="StreetEasy" href="/meta/nyc_opensearch_plugin.xml" />
+
+      <link href="//cdn-assets1.streeteasy.com/assets/print-d6ba2e9c88071396299093df049ff710.css" media="print" rel="stylesheet" type="text/css" />
+
+    <link rel="image_src" href="//cdn-assets0.streeteasy.com/images/streeteasy-logo.png" />
+    <link rel="canonical" href="http://streeteasy.com/for-rent/chelsea"/>
+<meta name='keywords' content='StreetEasy, Chelsea, West Village, and Flatiron real estate, Chelsea, West Village, and Flatiron Apartments, Chelsea, West Village, and Flatiron No-Fee Apartments For Rent, Chelsea, West Village, and Flatiron Apartments For Rent, Chelsea, West Village, and Flatiron properties, Chelsea, West Village, and Flatiron listings' />
+
+
+
+	<meta http-equiv='x-dns-prefetch-control' content='on'/>
+
+		<link rel='dns-prefetch' href='//streeteasy.com'/>
+
+		<link rel='dns-prefetch' href='//cdn-img0.streeteasy.com'/>
+
+		<link rel='dns-prefetch' href='//cdn-assets0.streeteasy.com'/>
+
+		<link rel='dns-prefetch' href='//cdn-assets1.streeteasy.com'/>
+
+		<link rel='dns-prefetch' href='//cdn-assets2.streeteasy.com'/>
+
+		<link rel='dns-prefetch' href='//cdn-assets3.streeteasy.com'/>
+
+		<link rel='dns-prefetch' href='//cdn-img1.streeteasy.com'/>
+
+		<link rel='dns-prefetch' href='//cdn-img2.streeteasy.com'/>
+
+		<link rel='dns-prefetch' href='//cdn-img3.streeteasy.com'/>
+
+		<link rel='dns-prefetch' href='//tracker-legacy.streeteasy.com'/>
+
+		<link rel='dns-prefetch' href='//s3.amazonaws.com'/>
+
+		<link rel='dns-prefetch' href='//api.streeteasy.com'/>
+
+		<link rel='dns-prefetch' href='//cdn-ne.streeteasy.com'/>
+
+		<link rel='dns-prefetch' href='//ne.streeteasy.com'/>
+
+		<link rel='dns-prefetch' href='//js-agent.newrelic.com'/>
+
+		<link rel='dns-prefetch' href='//bam.nr-data.net'/>
+
+		<link rel='dns-prefetch' href='//api.mapbox.com'/>
+
+		<link rel='dns-prefetch' href='//tags.bluekai.com'/>
+
+
+
+
+
+<!-- Load the Content Experiment JavaScript API client for the experiment -->
+<script>
+  // Ask Google Analytics which variation to show the user.
+  var geVariation = -1;
+  var geIsMobile = false
+
+  var isEmailRef = false
+  var isIOS = false
+  var suffix = "AD";
+
+  switch (geVariation) {
+    case 0:
+      var store_url = 'https://app.adjust.com/5mr8ra'; break;
+    case 1:
+      var store_url = 'https://app.adjust.com/frnz14'; break;
+    case 2:
+      var store_url = 'https://app.adjust.com/1pmh4s'; break;
+    default:
+      var store_url = 'https://app.adjust.com/uefzcn';
+  }
+
+  var image_url = "/images/smartbanner/android_white_screenshot_appstore.png";
+  var deepLinkUrl = 'streeteasy://search/rental?site_id=1&item_criteria=price:1750-2400|area:115,158,157|beds<=1|no_fee:1';
+  var dlClosed = false;
+  var seExp;
+
+</script>
+
+
+      <!-- START Google TagManager -->
+<script>
+  if (window.innerWidth < 980) {
+
+          var googleTag_empty_arr = [];
+          googletag.cmd.push(function() {
+            googletag.defineSlot('/7449/Streeteasy_MWeb/search_listview/rent_general/b_main_p1', [728, 150], 'b_main_p1_mobile_2').addService(googletag.pubads());
+            googletag.pubads().setTargeting('dma', "43");
+googletag.pubads().setTargeting('env', "prod");
+googletag.pubads().setTargeting('pis', "0");
+googletag.pubads().setTargeting('prange', "1750-1999,2000-2499");
+googletag.pubads().setTargeting('brokerfee', "no");
+googletag.pubads().setTargeting('bd', "1");
+googletag.pubads().setTargeting('hood', ["chelsea","west-village","flatiron"]);
+googletag.pubads().setTargeting('boro', ["manhattan","manhattan","manhattan"]);
+googletag.pubads().setTargeting('area', ["downtown","downtown","downtown"]);
+googletag.pubads().setTargeting('city', ["New_York","New_York","New_York"]);
+googletag.pubads().setTargeting('cnty', ["New_York","New_York","New_York"]);
+googletag.pubads().setTargeting('state', ["NY","NY","NY"]);
+
+            googletag.pubads().enableSingleRequest()
+            googletag.pubads().collapseEmptyDivs();
+            googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+              if(googleTag_empty_arr.length === 4) {
+                $j('.ad_amenities_ad').parent().hide();
+              } else {
+                if(/^(amn_main_p).*/g.test(event.slot.A.split("/").pop()) && event.isEmpty) {
+                  googleTag_empty_arr.push(event.isEmpty);
+                }
+              }
+            });
+            googletag.enableServices();
+          })
+
+  } else {
+
+          var googleTag_empty_arr = [];
+          googletag.cmd.push(function() {
+            googletag.defineSlot('/7449/Streeteasy/search_listview/rent_general/b_main_p2', [728, 90], 'b_main_p2').addService(googletag.pubads());googletag.defineSlot('/7449/Streeteasy/search_listview/rent_general/c_right_p1', [312, 40], 'c_right_p1').addService(googletag.pubads());googletag.defineSlot('/7449/Streeteasy/search_listview/rent_general/b_right_p1', [[300, 600], [300, 250]], 'b_right_p1').addService(googletag.pubads());
+            googletag.pubads().setTargeting('dma', "43");
+googletag.pubads().setTargeting('env', "prod");
+googletag.pubads().setTargeting('pis', "1");
+googletag.pubads().setTargeting('prange', "1750-1999,2000-2499");
+googletag.pubads().setTargeting('brokerfee', "no");
+googletag.pubads().setTargeting('bd', "1");
+googletag.pubads().setTargeting('hood', ["chelsea","west-village","flatiron"]);
+googletag.pubads().setTargeting('boro', ["manhattan","manhattan","manhattan"]);
+googletag.pubads().setTargeting('area', ["downtown","downtown","downtown"]);
+googletag.pubads().setTargeting('city', ["New_York","New_York","New_York"]);
+googletag.pubads().setTargeting('cnty', ["New_York","New_York","New_York"]);
+googletag.pubads().setTargeting('state', ["NY","NY","NY"]);
+
+            googletag.pubads().enableSingleRequest()
+            googletag.pubads().collapseEmptyDivs();
+            googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+              if(googleTag_empty_arr.length === 4) {
+                $j('.ad_amenities_ad').parent().hide();
+              } else {
+                if(/^(amn_main_p).*/g.test(event.slot.A.split("/").pop()) && event.isEmpty) {
+                  googleTag_empty_arr.push(event.isEmpty);
+                }
+              }
+            });
+            googletag.enableServices();
+          })
+
+  }
+</script>
+<script>
+  dataLayer = [{"site":"nyc","userType":"anonymous","pageCat":"rentals","pageType":"search","searchResultsListings":{"1":{"id":1842962,"price":2275,"bedrooms":0.0,"bathrooms":1.0,"half_baths":0,"size_sqft":null,"unittype":"R","area_id":115,"addr_street":"240 west 16th","addr_unit":"#5E","addr_hood":"","addr_city":"Manhattan","price_delta":0,"addr_lon":-74.0007,"addr_lat":40.7404,"addr_zip":"10011","title":"240 West 16th #5E","building_id":12197,"private_building_id":12197,"source":null,"small_image_uri":"http://cdn-img0.streeteasy.com/nyc/image/40/218682440.jpg","data":{"exclusive":0,"open_house_last_tweeted":"2016-08-01T10:39:22-04:00"},"type":"featured","noFee":true},"2":{"id":1854006,"price":2250,"bedrooms":0.0,"bathrooms":1.0,"half_baths":0,"size_sqft":null,"unittype":"R","area_id":115,"addr_street":"329 West 14th Street","addr_unit":"#E1","addr_hood":"Chelsea","addr_city":"Manhattan","price_delta":null,"addr_lon":-74.0039,"addr_lat":40.7405,"addr_zip":"10014","title":"329 West 14th Street #E1","building_id":11518,"private_building_id":11518,"source":"sky_management_nyc_rent","small_image_uri":"http://cdn-img2.streeteasy.com/nyc/image/90/220180890.jpg","data":{},"type":"regular","noFee":true},"3":{"id":1851160,"price":2150,"bedrooms":0.0,"bathrooms":0.0,"half_baths":0,"size_sqft":null,"unittype":"R","area_id":157,"addr_street":"102 Greenwich Avenue ","addr_unit":"#10","addr_hood":"","addr_city":"Manhattan","price_delta":0,"addr_lon":-74.0017,"addr_lat":40.7382,"addr_zip":"10011","title":"102 Greenwich Avenue #10","building_id":9810,"private_building_id":9810,"source":null,"small_image_uri":"http://cdn-img1.streeteasy.com/nyc/image/89/219659289.jpg","data":{"exclusive":0},"type":"regular","noFee":true},"4":{"id":1844584,"price":2350,"bedrooms":0.0,"bathrooms":1.0,"half_baths":0,"size_sqft":null,"unittype":"R","area_id":158,"addr_street":"172 Fifth Avenue","addr_unit":"#6A","addr_hood":"Flatiron District","addr_city":"Manhattan","price_delta":-50,"addr_lon":-73.9902,"addr_lat":40.7411,"addr_zip":"10010","title":"172 Fifth Avenue #6A","building_id":13646,"private_building_id":13646,"source":"town_nyc_rent","small_image_uri":"http://cdn-img2.streeteasy.com/nyc/image/94/219461694.jpg","data":{"open_house_last_tweeted":"2016-07-28T14:34:46-04:00"},"type":"regular","noFee":true},"5":{"id":1838492,"price":2300,"bedrooms":0.0,"bathrooms":1.0,"half_baths":0,"size_sqft":null,"unittype":"R","area_id":115,"addr_street":"240 W 16TH","addr_unit":"#D2","addr_hood":"","addr_city":"Manhattan","price_delta":0,"addr_lon":-74.0007,"addr_lat":40.7404,"addr_zip":"10011","title":"240 W 16th #D2","building_id":12197,"private_building_id":12197,"source":null,"small_image_uri":"http://cdn-img0.streeteasy.com/nyc/image/72/218127172.jpg","data":{"exclusive":0,"open_house_last_tweeted":"2016-08-01T10:35:57-04:00"},"type":"regular","noFee":true},"6":{"id":1832988,"price":2375,"bedrooms":0.0,"bathrooms":1.0,"half_baths":0,"size_sqft":null,"unittype":"R","area_id":115,"addr_street":"240 west 16th st","addr_unit":"#B4","addr_hood":"","addr_city":"Manhattan","price_delta":25,"addr_lon":-74.0007,"addr_lat":40.7404,"addr_zip":"10011","title":"240 West 16th Street #B4","building_id":12197,"private_building_id":12197,"source":null,"small_image_uri":"http://cdn-img2.streeteasy.com/nyc/image/14/218019714.jpg","data":{"exclusive":0},"type":"regular","noFee":true},"7":{"id":1828211,"price":2400,"bedrooms":0.0,"bathrooms":1.0,"half_baths":0,"size_sqft":null,"unittype":"R","area_id":115,"addr_street":"307 W 29th ST","addr_unit":"#1A","addr_hood":"Chelsea","addr_city":"Manhattan","price_delta":-100,"addr_lon":-73.9963,"addr_lat":40.7495,"addr_zip":"10001","title":"307 W 29th Street #1A","building_id":11885,"private_building_id":11885,"source":"tregny_nyc_rent","small_image_uri":"http://cdn-img3.streeteasy.com/nyc/image/99/218138699.jpg","data":{},"type":"regular","noFee":true},"8":{"id":1828212,"price":2308,"bedrooms":0.0,"bathrooms":1.0,"half_baths":0,"size_sqft":null,"unittype":"R","area_id":115,"addr_street":"307 W 29th ST","addr_unit":"#4A","addr_hood":"Chelsea","addr_city":"Manhattan","price_delta":-192,"addr_lon":-73.9963,"addr_lat":40.7495,"addr_zip":"10001","title":"307 W 29th Street #4A","building_id":11885,"private_building_id":11885,"source":"tregny_nyc_rent","small_image_uri":"http://cdn-img0.streeteasy.com/nyc/image/80/218138680.jpg","data":{},"type":"regular","noFee":true}},"searchCat":"rentals","searchBoro":"manhattan","searchNabe":"chelsea|flatiron|west-village","searchMinPrice":"1750","searchMaxPrice":"2400","searchBeds":"<=1","searchView":"details","searchResults":8,"session_q_c":0,"cookie_q_c":0}];
+</script>
+<!-- END Google TagManager -->
+
+<!-- Begin BlueKai Tag -->
+<script type="text/javascript">
+  window.bk_async = function() {
+              bk_addPageCtx("dma", 43);
+          bk_addPageCtx("env", "prod");
+          bk_addPageCtx("pis", 2);
+          bk_addPageCtx("prange", ["1750-1999","2000-2499"]);
+          bk_addPageCtx("brokerfee", "no");
+          bk_addPageCtx("bd", "1");
+          bk_addPageCtx("hood", ["chelsea","west-village","flatiron"]);
+          bk_addPageCtx("boro", ["manhattan","manhattan","manhattan"]);
+          bk_addPageCtx("area", ["downtown","downtown","downtown"]);
+          bk_addPageCtx("city", ["New_York","New_York","New_York"]);
+          bk_addPageCtx("cnty", ["New_York","New_York","New_York"]);
+          bk_addPageCtx("state", ["NY","NY","NY"]);
+          bk_addPageCtx("zag", false);
+          bk_addPageCtx("registered", false);
+
+    bk_allow_multiple_calls = true;
+    bk_use_multiple_iframes = true;
+    BKTAG.doJSTag(17992, 10);
+  };
+
+  (function() {
+    var scripts = document.getElementsByTagName('script')[0];
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = "//tags.bkrtx.com/js/bk-coretag.js";
+    scripts.parentNode.insertBefore(s, scripts);
+  }());
+</script>
+<!-- End BlueKai Tag -->
+
+
+
+
+    <style type="text/css">
+      @font-face{
+        font-family:'FontAwesome';
+        src:url("/assets/font-awesome/font/fontawesome-webfont.eot?v=3.2.1");
+        src:url("/assets/font-awesome/font/fontawesome-webfont.eot?#iefix&v=3.2.1") format("embedded-opentype"),
+        url("/assets/font-awesome/font/fontawesome-webfont.woff?v=3.2.1") format("woff"),
+        url("/assets/font-awesome/font/fontawesome-webfont.ttf?v=3.2.1") format("truetype"),
+        url("/assets/font-awesome/font/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1") format("svg");
+      }
+    </style>
+
+  </head>
+  <body id="application" class="unknown_platform unknown_engine unknown_family desktop site_nyc listings rental details_view i_s_disabled">
+
+    <!-- Google Tag Manager -->
+<noscript>
+  <iframe src="//www.googletagmanager.com/ns.html?id=GTM-MKTT9R"
+          height="0"
+          width="0"
+          style="display:none;visibility:hidden">
+  </iframe>
+</noscript>
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MKTT9R');
+</script>
+<!-- End Google Tag Manager -->
+
+    <nav class="navbar navbar-default visible-xs-block visible-sm-block navbar-fixed-top" role="navigation">
+  <div class="container-fluid hide-print">
+    <ul class="nav navbar-nav navbar-left">
+      <li>
+        <a href="#" data-toggle="menu">
+          <img alt="Menu_white" class="MenuMobileIcon" src="//cdn-assets2.streeteasy.com/assets/icons/menu_white.png" />
+          <img alt="Close_white" class="MenuMobileIcon" src="//cdn-assets1.streeteasy.com/assets/icons/close_white.png" style="display:none" />
+        </a>
+      </li>
+    </ul>
+
+
+
+    <ul class="nav navbar-nav navbar-right">
+        <li class="hidden-sm"><a href='#' data-toggle="modal" data-target="#searchModal">FILTER</a></li>
+  <li class="hidden-sm"><a href="#" data-toggle="modal" data-target="#sortModal">SORT</a></li>
+    <li class="hidden-sm">
+
+
+    <a href="#" data-gtm-item-id="21744358" data-gtm-item-type="Search" data-gtm-item="search" data-gtm-login-required="true" data-gtm-origin="save_mobile_navbar" data-gtm-page-category="" data-gtm-page-type="search" data-gtm-rendered-from="add_entry_link_2013" data-gtm-track-save-item-type="false" data-modal-class="modal-signin" data-modal-source="/nyc/user/register_dialog/nyc?item=Search&item_id=21744358&origin=save_mobile_navbar&page_category=&page_type=search&return_to=%2Ffolders%2F-%2Fadd_entry_dialog_2013%3Fentry%255Bitem_criteria%255D%3Dprice%253A1750-2400%257Carea%253A115%252C158%252C157%257Cbeds%253C%253D1%257Cno_fee%253A1%26entry%255Bitem_listing_class%255D%3DRental%26entry%255Bitem_type%255D%3DSearch%26lnf_mode%3D2013%26quick_save%3Dtrue&return_to_save_search=add_folder_entry_Search_21744358_link" data-toggle="modal" rel="nofollow" style="color:white;">SAVE SEARCH</a>
+
+
+
+
+
+    </li>
+
+    </ul>
+  </div>
+</nav>
+
+    <span class="new_spinner hidden">
+      <i class="icon-spinner icon-spin"></i>
+    </span>
+
+    <div id="site-wrapper" class="SiteBlock">
+      <div id="banner-spacer" class="hidden-md"></div>
+
+      <div id="site-canvas" class="SiteBlock-canvas">
+        <div id="site-menu" class="SiteBlock-menu">
+          <nav role="navigation" class="MenuMobile" id="navbar_block">
+  <div id="navbar_menu">
+    <form action="/search" method="get" class="Search MenuMobile-search">
+      <input id="search" name="search" placeholder="Search" type="text" class="Search-input Search-input--big">
+      <button class="icon-search Search-button Search-button--big" type="submit"></button>
+    </form>
+
+    <ul class="MenuMobileBig">
+      <li>
+        <a href="/?sales=1">Sales</a>
+      </li>
+        <li>
+          <a href="/rentals">Rentals</a>
+        </li>
+        <li>
+          <a href="/buildings">Buildings</a>
+        </li>
+
+    </ul>
+
+  </div>
+
+  <ul class="MenuMobileSignin">
+      <li class="MenuMobileSignin-links">
+        <a href="#" data-modal-class="modal-signin" data-modal-source="/nyc/user/register_dialog/nyc" data-toggle="modal">Register</a>
+        &nbsp;or&nbsp;
+        <a href="#" data-modal-class="modal-signin" data-modal-source="/nyc/user/sign_in_dialog/nyc" data-toggle="modal">Sign In</a>
+      </li>
+  </ul>
+</nav>
+
+        </div>
+
+        <div id="site-content" class="SiteBlock-content">
+          <div id='site-shadow' class='SiteBlock-shadow'></div>
+          <header class="HeaderBlock visible-md-block">
+
+            <div class="Header">
+
+  <div class="Container">
+    <div class="Header-logo">
+      <a href="/" class="Logo">
+        <img alt="StreetEasy NYC Real Estate &amp;amp; Manhattan Apartments For Sale" src="//cdn-assets0.streeteasy.com/images/streeteasy-logo-white.png" />
+      </a>
+    </div>
+
+    <div class="Header-nav">
+        <div class="HeaderNav">
+          <ul>
+              <li class="HeaderNav-li HeaderNavItem">
+                <span class="HeaderNavItem-text">Recent Searches &nbsp;<i class="icon-angle-down"></i></span>
+                <div class="HeaderNavItem-popup HeaderNavItem-popup--wide">
+                  <ul>
+                      <li class="HeaderNavItemPopupRow">
+                        <a href="/for-rent/nyc/price:1750-2400%7Carea:115,158,157%7Cbeds%3C=1%7Cno_fee:1" class="HeaderNavItemPopupRow-link" data-gtm-header-menu="Recent Searches" title="For Rent: listings between $1,750 and $2,400 in Chelsea, West Village or Flatiron  for studio or 1 bedroom apartments  no fee">For Rent: listings between $1,750 and $2,400 in Chelsea, West Villa...</a>
+                        <span class="HeaderNavItemPopupRow-btn">
+
+  <a href="#" class="button button-tool" data-gtm-item-id="21744358" data-gtm-item-type="Search" data-gtm-item="search" data-gtm-login-required="true" data-gtm-origin="save" data-gtm-page-category="" data-gtm-page-type="search" data-gtm-rendered-from="add_entry_link_2013" data-gtm-track-save-item-type="false" data-modal-class="modal-signin" data-modal-source="/nyc/user/register_dialog/nyc?item=Search&item_id=21744358&origin=save&page_category=&page_type=search&return_to=%2Ffolders%2F-%2Fadd_entry_dialog_2013%3Fentry%255Bitem_criteria%255D%3Dprice%253A1750-2400%257Carea%253A115%252C158%252C157%257Cbeds%253C%253D1%257Cno_fee%253A1%26entry%255Bitem_listing_class%255D%3DRental%26entry%255Bitem_type%255D%3DSearch%26lnf_mode%3D2013&return_to_save_search=add_folder_entry_Search_21744358_link" data-toggle="modal" id="add_folder_entry_Search_21744358_link" rel="nofollow"><i class='icon-star' data-gtm-item-type=Search data-gtm-item-id=21744358 data-gtm-track-save-item-type=false></i> SAVE</a>
+
+
+
+                        </span>
+                      </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <a href="#" data-gtm-header-menu="Recent Searches" data-gtm-login-required="true" data-gtm-origin="sign_in" data-gtm-rendered-from="user_nav" data-modal-class="modal-signin" data-modal-source="/nyc/user/sign_in_dialog/nyc" data-toggle="modal">Sign In</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            <li class="HeaderNav-li HeaderNav-itemRightSeparator" name="signin">
+              <a href="#" data-gtm-header-menu="Recent Searches" data-gtm-login-required="true" data-gtm-origin="sign_in" data-gtm-rendered-from="user_nav" data-modal-class="modal-signin" data-modal-source="/nyc/user/sign_in_dialog/nyc" data-toggle="modal">Sign In</a>
+            </li>
+            <li class="HeaderNav-li" name="register">
+              <a href="#" data-gtm-header-menu="Recent Searches" data-gtm-login-required="true" data-gtm-origin="register" data-gtm-page-category="rentals" data-gtm-page-type="search" data-gtm-rendered-from="user_nav" data-modal-class="modal-signin" data-modal-source="/nyc/user/register_dialog/nyc?origin=right_box_slot_1&page_category=rentals&page_type=search" data-toggle="modal">Register</a>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</div>
+
+            <div class="MainNavBlock">
+  <div class="Container">
+    <ul class="MainNav isHoverable">
+        <li class="MainNav-li MainNavItem isTrackingMenuItem" data-trending-id="1236835" data-type='Sales'>
+          <a href="/?sales=1" class="MainNavItem-text" data-toggle="nav_popup">Sales</a>
+          <div class='MainNav-popup MainNavItem-popup'>
+            <div class="Container">
+              <div class="MainNavPopupColumn">
+                <h6>Boroughs</h6>
+                <ul>
+                  <li><a href="/for-sale/manhattan" data-gtm-header-menu="Sales">Manhattan</a></li>
+                  <li><a href="/for-sale/brooklyn" data-gtm-header-menu="Sales">Brooklyn</a></li>
+                  <li><a href="/for-sale/queens" data-gtm-header-menu="Sales">Queens</a></li>
+                  <li><a href="/for-sale/bronx" data-gtm-header-menu="Sales">Bronx</a></li>
+                  <li><a href="/for-sale/staten-island" data-gtm-header-menu="Sales">Staten Island</a></li>
+                </ul>
+              </div>
+              <div class="MainNavPopupColumn MainNavPopupColumn--last">
+                <h6>POPULAR NEIGHBORHOODS</h6>
+                <ul>
+  <li><a data-gtm-header-menu="Sales" href="/for-sale/upper-east-side">Upper East Side</a></li>
+  <li><a data-gtm-header-menu="Sales" href="/for-sale/tribeca">Tribeca</a></li>
+  <li><a data-gtm-header-menu="Sales" href="/for-sale/williamsburg">Williamsburg</a></li>
+  <li><a data-gtm-header-menu="Sales" href="/for-sale/brooklyn-heights">Brooklyn Heights</a></li>
+  <li><a data-gtm-header-menu="Sales" href="/for-sale/park-slope">Park Slope</a></li>
+  <li><a data-gtm-header-menu="Sales" href="/for-sale/ditmas-park">Ditmas Park</a></li>
+  <li><a data-gtm-header-menu="Sales" href="/for-sale/astoria">Astoria</a></li>
+  <li><a data-gtm-header-menu="Sales" href="/for-sale/jackson-heights">Jackson Heights</a></li>
+  <li><a data-gtm-header-menu="Sales" href="/sales/all">View All</a></li>
+</ul>
+
+              </div>
+              <div class="MainNavPopupColumn MainNavPopupColumn--ads">
+                <div class="MostViewedItem">
+  <div class="MostViewedItem-img">
+    <a href="/building/114-west-27-street-new_york/8n" data-gtm-header-listing-id="1236835" data-gtm-header-listing-type="sale"><img alt="114 West 27th Street #8N" src="http://cdn-img2.streeteasy.com/nyc/image/42/220099142.jpg" /></a>
+  </div>
+  <div class="MostViewedItem-content MostViewedItemText">
+    <p class="MostViewedItemText-title">
+      <a href="/building/114-west-27-street-new_york/8n" data-gtm-header-listing-id="1236835" data-gtm-header-listing-type="sale">114 West 27th Street #8N</a>
+    </p>
+
+    <p>
+
+        <span class='MostViewedItemText-price'>$2,750,000</span>
+        <span class='MostViewedItemText-for'>for sale</span>
+    </p>
+
+    <p>2 beds<span class='MostViewedItemText-bullet'>&bullet;</span>2 baths</p>
+    <p>Co-op in <a href="/area/chelsea">Chelsea</a></p>
+  </div>
+</div>
+
+              </div>
+            </div>
+          </div>
+        </li><li class="MainNav-li MainNavItem isTrackingMenuItem" data-trending-id="1852036" data-type='Rentals'>
+          <a href="/rentals" class="MainNavItem-text" data-toggle="nav_popup">Rentals</a>
+          <div class='MainNav-popup MainNavItem-popup'>
+            <div class="Container">
+              <div class="MainNavPopupColumn">
+                <h6>Boroughs</h6>
+                <ul>
+                  <li><a href="/for-rent/manhattan" data-gtm-header-menu="Rentals">Manhattan</a></li>
+                  <li><a href="/for-rent/brooklyn" data-gtm-header-menu="Rentals">Brooklyn</a></li>
+                  <li><a href="/for-rent/queens" data-gtm-header-menu="Rentals">Queens</a></li>
+                  <li><a href="/for-rent/bronx" data-gtm-header-menu="Rentals">Bronx</a></li>
+                  <li><a href="/for-rent/staten-island" data-gtm-header-menu="Rentals">Staten Island</a></li>
+                </ul>
+              </div>
+              <div class="MainNavPopupColumn MainNavPopupColumn--last">
+                <h6>POPULAR NEIGHBORHOODS</h6>
+                <ul>
+  <li><a data-gtm-header-menu="Rentals" href="/for-rent/tribeca">Tribeca</a></li>
+  <li><a data-gtm-header-menu="Rentals" href="/for-rent/upper-east-side">Upper East Side</a></li>
+  <li><a data-gtm-header-menu="Rentals" href="/for-rent/upper-west-side">Upper West Side</a></li>
+  <li><a data-gtm-header-menu="Rentals" href="/for-rent/midtown">Midtown</a></li>
+  <li><a data-gtm-header-menu="Rentals" href="/for-rent/west-village">West Village</a></li>
+  <li><a data-gtm-header-menu="Rentals" href="/for-rent/east-village">East Village</a></li>
+  <li><a data-gtm-header-menu="Rentals" href="/for-rent/williamsburg">Williamsburg</a></li>
+  <li><a data-gtm-header-menu="Rentals" href="/for-rent/astoria">Astoria</a></li>
+  <li><a data-gtm-header-menu="Rentals" href="/rentals/all">View All</a></li>
+</ul>
+
+              </div>
+              <div class="MainNavPopupColumn MainNavPopupColumn--ads">
+                <div class="MostViewedItem">
+  <div class="MostViewedItem-img">
+    <a href="/rental/1852036" data-gtm-header-listing-id="1852036" data-gtm-header-listing-type="rental"><img alt="97 East 7st" src="http://cdn-img0.streeteasy.com/nyc/image/52/219978252.jpg" /></a>
+  </div>
+  <div class="MostViewedItem-content MostViewedItemText">
+    <p class="MostViewedItemText-title">
+      <a href="/rental/1852036" data-gtm-header-listing-id="1852036" data-gtm-header-listing-type="rental">97 East 7st</a>
+    </p>
+
+    <p>
+
+        <span class='MostViewedItemText-price'>$1,875</span>
+        <span class='MostViewedItemText-for'>for rent</span>
+    </p>
+
+    <p>1 bath</p>
+    <p>Rental Unit in <a href="/area/east-village">East Village</a></p>
+  </div>
+</div>
+
+              </div>
+            </div>
+          </div>
+        </li><li class="MainNav-li MainNavItem isTrackingMenuItem" data-trending-id="9243" data-type='Buildings'>
+          <a href="/buildings" class="MainNavItem-text" data-toggle="nav_popup">Buildings</a>
+          <div class='MainNav-popup MainNavItem-popup'>
+            <div class="Container">
+              <div class="MainNavPopupColumn">
+                <h6>Boroughs</h6>
+                <ul>
+                  <li><a data-gtm-header-menu="Buildings" href="/buildings/manhattan">Manhattan</a></li>
+                  <li><a data-gtm-header-menu="Buildings" href="/buildings/brooklyn">Brooklyn</a></li>
+                  <li><a data-gtm-header-menu="Buildings" href="/buildings/queens">Queens</a></li>
+                  <li><a data-gtm-header-menu="Buildings" href="/buildings/bronx">Bronx</a></li>
+                  <li><a data-gtm-header-menu="Buildings" href="/buildings/staten-island">Staten Island</a></li>
+                </ul>
+              </div>
+              <div class="MainNavPopupColumn MainNavPopupColumn--last">
+                <h6>POPULAR BUILDINGS</h6>
+                <ul>
+                  <li><a data-gtm-header-menu="Buildings" href="/building/432-park-avenue">432 Park Avenue</a></li>
+                  <li><a data-gtm-header-menu="Buildings" href="/building/trump-tower">Trump Tower</a></li>
+                  <li><a data-gtm-header-menu="Buildings" href="/building/one57-condominium">One57</a></li>
+                  <li><a data-gtm-header-menu="Buildings" href="/complex/stuyvesant-town">Stuyvesant Town</a></li>
+                  <li><a data-gtm-header-menu="Buildings" href="/building/new-york-by-gehry">8 Spruce Street</a></li>
+                  <li><a data-gtm-header-menu="Buildings" href="/building/56-leonard-street-new_york">56 Leonard Street</a></li>
+                  <li><a data-gtm-header-menu="Buildings" href="/building/388-bridge-street-brooklyn">388 Bridge Street</a></li>
+                </ul>
+              </div>
+              <div class="MainNavPopupColumn MainNavPopupColumn--ads">
+                <div class="MostViewedItem">
+  <div class="MostViewedItem-img">
+    <a href="/building/160-leroy-street-new_york" data-gtm-header-listing-id="9243" data-gtm-header-listing-type="building"><img alt="160 Leroy Street in West Village" src="http://cdn-img2.streeteasy.com/nyc/image/62/202820962.jpg" /></a>
+  </div>
+  <div class="MostViewedItem-content MostViewedItemText">
+    <p class="MostViewedItemText-title">
+      <a href="/building/160-leroy-street-new_york" data-gtm-header-listing-id="9243" data-gtm-header-listing-type="building">160 Leroy Street</a>    </p>
+
+    <p><a href="/area/west-village">West Village</a></p>
+    <p>9  sales</p>  </div>
+</div>
+
+              </div>
+            </div>
+          </div>
+        </li><li class="MainNav-li MainNavItem isTrackingMenuItem" data-type='Resourses'>
+        <span class="MainNavItem-text" data-toggle="nav_popup">Resources</span>
+        <div class='MainNav-popup MainNavItem-popup'>
+          <div class="Container">
+            <div class="MainNavPopupColumn">
+              <h6>Browse</h6>
+              <ul class="MainNavPopupColumn-paddingBottom">
+                <li><a data-gtm-header-menu="Resources" href="/no-fee-rentals/nyc">No-fee Apartments</a></li>
+                <li><a data-gtm-header-menu="Resources" href="/pet-friendly-rentals/nyc">Pet-Friendly Rentals</a></li>
+              </ul>
+              <h6>Market Data</h6>
+              <ul>
+                <li><a data-gtm-header-menu="Resources" href="/blog/market-reports">Market Reports</a></li>
+                  <li>
+                      <a href="#" data-gtm-header-menu="Resources" data-gtm-login-required="true" data-gtm-origin="comparables_report" data-gtm-rendered-from="site_nav" data-gtm-track="resources-menu" data-modal-class="modal-signin" data-modal-source="/nyc/user/register_dialog/nyc?origin=comparables_report&return_to=%2Fmy%2Fcomparables" data-toggle="modal">Comparables Reports</a>
+                  </li>
+              </ul>
+            </div>
+            <div class="MainNavPopupColumn">
+              <h6>Mortgage</h6>
+              <ul class="MainNavPopupColumn-paddingBottom">
+                <li><a href="/nyc/mortgage_rates" data-gtm-header-menu="Resources">Mortgage Rates</a></li>
+                <li><a href="/nyc/calculator" data-gtm-header-menu="Resources">Mortgage Calculator</a></li>
+              </ul>
+              <h6>Tools</h6>
+              <ul>
+                <li><a data-gtm-header-menu="Resources" href="/trending">Trending Listings</a></li>
+                <li><a data-gtm-header-menu="Resources" href="/talk">StreetEasy Forums</a></li>
+                  <li name='open_house_planner'>
+                      <a href="#" data-gtm-header-menu="Resources" data-gtm-login-required="true" data-gtm-origin="open_house" data-gtm-rendered-from="site_nav" data-gtm-track="resources-menu" data-modal-class="modal-signin" data-modal-source="/nyc/user/register_dialog/nyc?origin=open_house&return_to=%2Fopen_house_planner%3Fsite%3Dnyc" data-toggle="modal">Open House Planner</a>
+                  </li>
+              </ul>
+            </div>
+            <div class="MainNavPopupColumn MainNavPopupColumn--lastShort">
+              <h6>Guides</h6>
+              <ul class="MainNavPopupColumn-paddingBottom">
+                <li><a href="/guides/" data-gtm-header-menu="Resources">NYC Real Estate Guides</a></li>
+                <li><a href="/neighborhoods" data-gtm-header-menu="Resources">Neighborhood Guides</a></li>
+              </ul>
+              <h6>Q&A</h6>
+              <ul>
+                <li><a data-gtm-header-menu="Resources" href="http://streeteasy.com/guides/buyers-guide/should-you-rent-or-buy/">Should You Rent or Buy?</a></li>
+                <li><a data-gtm-header-menu="Resources" href="http://streeteasy.com/guides/buyers-guide/what-are-maintenance-fees/">What are Maintenance Fees</a></li>
+                <li><a data-gtm-header-menu="Resources" href="http://streeteasy.com/guides/renters-guide/how-much-rent-can-you-afford/">How Much Rent Can You Afford?</a></li>
+                <li><a data-gtm-header-menu="Resources" href="http://streeteasy.com/guides/buyers-guide/why-you-need-a-good-credit-score/">Why You Need a Good Credit Score?</a></li>
+              </ul>
+            </div>
+            <div class="MainNavPopupColumn MainNavPopupColumn--adsShort">
+              <a href="/guides/" data-gtm-header-menu="Resources" data-gtm-header-resource-ad="true"><img alt="Re_guides" src="//cdn-assets3.streeteasy.com/assets/images/menu_ads/RE_Guides-2e4acd8130955eb404a8fdb161892b2d.jpg" /></a>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <ul class="MainNav">
+      <li class="MainNavItem"><a href="/blog/" class="MainNavItem-text" data-gtm-header-menu="Blog">Blog</a></li>
+    </ul>
+      <form class="Search MainNavBlock-search" method="get" action="/search">
+        <input type="text" placeholder="e.g. address, building, agent" name="search" class="Search-input">
+        <button class="icon-search Search-button" type="submit"></button>
+      </form>
+  </div>
+</div>
+
+          </header>
+
+
+
+          <div id="content">
+
+
+
+
+
+            <div class="Container">
+              <div id='header_print_info' class='only-print'>
+                Printed from StreetEasy.com at 06:24 PM, Aug 2 2016
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="xs-criteria hidden-md hidden-sm">
+    <div class="result-count">8</div> Chelsea, West Village, and Flatiron Apartments For Rent   - Between $1,750 and $2,400  for studio or 1 bedroom apartments
+</div>
+
+<div class="result-header">
+  <div class="hidden-xs" id="results-criteria">
+      <div class="result-count first">8</div>
+      <h1 class="first">
+        Chelsea, West Village, and Flatiron Apartments For Rent
+      </h1>
+      <div class="second"> - Between $1,750 and $2,400  for studio or 1 bedroom apartments</div>
+  </div>
+
+  <div class='view-options hidden-xs hidden-print' se:behavior="pin_to_top">
+    <div class="search-actions">
+      <a href='#' class='button button-primary' data-toggle="modal" data-target="#searchModal" id="search_modal_link">
+        Refine This Search
+      </a>
+
+
+  <a href="#" class="button button-tool" data-gtm-item-id="21744358" data-gtm-item-type="Search" data-gtm-item="search" data-gtm-login-required="true" data-gtm-origin="save_header" data-gtm-page-category="" data-gtm-page-type="search" data-gtm-rendered-from="add_entry_link_2013" data-gtm-track-save-item-type="false" data-modal-class="modal-signin" data-modal-source="/nyc/user/register_dialog/nyc?item=Search&item_id=21744358&origin=save_header&page_category=&page_type=search&return_to=%2Ffolders%2F-%2Fadd_entry_dialog_2013%3Fentry%255Bitem_criteria%255D%3Dprice%253A1750-2400%257Carea%253A115%252C158%252C157%257Cbeds%253C%253D1%257Cno_fee%253A1%26entry%255Bitem_listing_class%255D%3DRental%26entry%255Bitem_type%255D%3DSearch%26lnf_mode%3D2013&return_to_save_search=add_folder_entry_Search_21744358_link" data-toggle="modal" id="add_folder_entry_Search_21744358_link" rel="nofollow"><i class='icon-star' data-gtm-item-type=Search data-gtm-item-id=21744358 data-gtm-track-save-item-type=false></i> SAVE SEARCH</a>
+
+
+
+
+
+    </div >
+
+      <div class='label spaced'>Sort by</div>
+      <select name="sort_by" se:behavior="form_submitter" style="height: 34px;">
+        <option value="listed_desc" selected="selected">Newest</option>
+<option value="interesting_desc">Recently updated</option>
+<option value="price_desc">Most expensive</option>
+<option value="price_asc">Least expensive</option>
+<option value="sqft_desc">Largest</option>
+<option value="sqft_asc">Smallest</option>
+      </select>
+
+    <div class="details-and-map tabset hidden-sm">
+
+      <ul class='tabset-tabs-container'>
+        <li class="tabset-tab selected" se:behavior="clickable"><a href="?view=details"> Details</a></li>
+        <li class="tabset-tab " se:behavior="clickable"><a href="?view=map"> Map</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="result-details" class="row">
+  <div class="right hidden-xs hidden-sm hidden-print">
+  <div class="sidebar">
+    <div class="sidebar-map-top-ad">
+          <div id='c_right_p1' style='zoom: 1; filter: alpha(opacity=100); opacity: 1;'>
+      <script type='text/javascript'>
+        googletag.cmd.push(function() {
+          googletag.display("c_right_p1");
+        });
+      </script>
+    </div>
+
+    </div>
+
+<div se:behavior='map' id='map' class='map' style='height: 336px;' se:map:zoom='15' se:map:min_zoom='12' se:map:max_zoom='19' se:map:center_latlon='40.73921,-73.99034' se:map:center_around='polygons' se:map:mapbox='streeteasy.4f8c9dd3,streeteasy.ba6c0422' se:map:layer_names='Streets,Satellite' >
+<div se:behavior='map_layer_definition' se:map_layer:name="streets"se:map_layer:url="https://api.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}"se:map_layer:title="Streets"se:map_layer:min_zoom="12"se:map_layer:max_zoom="19"se:map_layer:type="base"></div>
+<div se:behavior='map_layer_definition' se:map_layer:name="satellite"se:map_layer:url="https://api.mapbox.com/v4/streeteasy.ba6c0422/{z}/{x}/{y}.png?access_token={accessToken}"se:map_layer:title="Satellite"se:map_layer:min_zoom="12"se:map_layer:max_zoom="19"se:map_layer:type="base"></div>
+<div se:behavior='map_layer_definition' se:map_layer:name="bikeshare"se:map_layer:url="https://api.mapbox.com/v4/streeteasy.se-nyc-bikeshare/{z}/{x}/{y}.png?access_token={accessToken}"se:map_layer:title="Citi Bike"se:map_layer:type="overlay"se:map_layer:utf_grid="https://api.tiles.mapbox.com/v3/streeteasy.se-nyc-bikeshare/{z}/{x}/{y}.grid.json?callback={cb}"se:map_layer:utf_popup_content_js="'<b>Citi Bike Station</b><br />' + ev.data.name + '<br />' + ev.data.docks + ' docks'"></div>
+<div se:behavior='map_layer_definition' se:map_layer:name="evacuation"se:map_layer:url="https://api.tiles.mapbox.com/v4/streeteasy.se-nyc-evacuation/{z}/{x}/{y}.png?access_token={accessToken}"se:map_layer:title="Storm Evacuation Zones"se:map_layer:type="overlay"se:map_layer:utf_grid="https://api.tiles.mapbox.com/v3/streeteasy.se-nyc-evacuation/{z}/{x}/{y}.grid.json?callback={cb}"se:map_layer:utf_popup_content_js="'<center>NYC Storm Evacuation<br />Zone ' + ev.data.Zone + '</center>'"></div>
+</div>
+  <div se:behavior='map_polygon' se:map='map' se:map:paths='o_vwFvkvbMnm@hGbAyXf^{iA{|@il@gr@~xB' se:map:color='#0066CC' se:map:weight='4' se:map:opacity='0.7' se:map:fillColor='#CCCCCC' se:map:fillOpacity='0' se:map:group='polygons'></div>
+  <div se:behavior='map_polygon' se:map='map' se:map:paths='gvqwFt`wbMbAiYuFUnCap@uFqBgGuC_PcK_BVeN~GoKyGkUdt@g@x@QbAw@xX' se:map:color='#0066CC' se:map:weight='4' se:map:opacity='0.7' se:map:fillColor='#CCCCCC' se:map:fillOpacity='0' se:map:group='polygons'></div>
+  <div se:behavior='map_polygon' se:map='map' se:map:paths='_}rwF~crbMgEP{\sUdCkIiZ}RcTrq@z|@dl@' se:map:color='#0066CC' se:map:weight='4' se:map:opacity='0.7' se:map:fillColor='#CCCCCC' se:map:fillOpacity='0' se:map:group='polygons'></div>
+
+    <div class="sidebar-map-bottom-ad">
+          <div id='b_right_p1' style='zoom: 1; filter: alpha(opacity=100); opacity: 1;'>
+      <script type='text/javascript'>
+        googletag.cmd.push(function() {
+          googletag.display("b_right_p1");
+        });
+      </script>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+
+  <div class='left-two-thirds items item-rows listings'>
+
+<div id="listing_1842962_featured" class="item featured" data-id="1842962" se:behavior='selectable hoverable clickable rememberable mappable' se:map='map' se:map:point='40.7404,-74.0007' data-blockindex='0' se:map='map' se:map:point='40.7404,-74.0007' data-track='lt-fclick-r-1842962' data-imp='lt-fimp-r-1842962'>
+  <div class='banner no_fee'></div>
+
+  <div class="photo">
+    <div id='saved_banner_Rental-1842962' class='banner saved unsaved'></div>
+
+    <a href="/building/240-west-16-street-new_york/5e?featured=1" data-gtm-featured-listing="true" data-gtm-floorplan-3d="false" data-gtm-listing-id="1842962" data-gtm-listing-type="rental"><img alt="240 West 16th" border="0" class="lazy" data-original="http://cdn-img1.streeteasy.com/nyc/image/33/218682433.jpg" data-performance-mark="search.Rentals.listingImageVisible" src="//cdn-assets3.streeteasy.com/assets/placeholder-6c0ccc2d8787f5b1186928095e6a6456.png" /></a>
+  </div>
+
+    <div class="featured-tag">Featured</div>
+
+  <div class="details row">
+    <div class="details-title">
+      <a href="/building/240-west-16-street-new_york/5e?featured=1" data-gtm-featured-listing="true" data-gtm-floorplan-3d="false" data-gtm-listing-id="1842962" data-gtm-listing-type="rental" se:clickable:target="true">240 West 16th #5E</a>
+
+        <div class="item_tools hidden-xs">
+
+  <a href="#" class="button button-tool hide-text" data-gtm-item-id="1842962" data-gtm-item-type="Rental" data-gtm-item="rental" data-gtm-login-required="true" data-gtm-origin="save" data-gtm-page-category="" data-gtm-page-type="search" data-gtm-rendered-from="add_entry_link_2013" data-gtm-track-save-item-type="false" data-modal-class="modal-signin" data-modal-source="/nyc/user/register_dialog/nyc?item=Rental&item_id=1842962&origin=save&page_category=&page_type=search&return_to=%2Ffolders%2F-%2Fadd_entry_dialog_2013%3Fentry%255Bitem_id%255D%3D1842962%26entry%255Bitem_type%255D%3DRental%26lnf_mode%3D2013%26quick_save%3Dtrue%26saved_in_folders_info%3Dtrue&return_to_save_search=add_folder_entry_Rental_1842962_link" data-toggle="modal" id="add_folder_entry_Rental_1842962_link" rel="nofollow"><i class='icon-star' data-gtm-item-type=Rental data-gtm-item-id=1842962 data-gtm-track-save-item-type=false></i> SAVE</a>
+
+
+
+        </div>
+    </div>
+
+    <div class="price-info">
+
+        <span class='price'>$2,275</span>
+        <span class='secondary_text'>for rent</span>
+    </div>
+
+
+
+    <div class='details_info'><span class='first_detail_cell'>1 bath</span></div>
+    <div class="details_info">
+      Rental Unit in <a href='/neighborhoods/chelsea/'>Chelsea</a>    </div>
+
+      <div class="details_info">
+        Listed by Steve Harris, LREB<br/>
+      </div>
+
+      <div class="details_info">
+        <b>Open House: </b>
+        Tue, Aug 2&nbsp
+
+          3:00 PM - 4:00 PM
+
+        <span class="hidden-sm hidden-xs">
+            <span id='save_OpenHouse_9427303' class='hidden-xs'>
+      <a href="#" class="button button-tool button-discrete" data-gtm-login-required="true" data-gtm-origin="open_house" data-gtm-rendered-from="save_open_house_2014" data-modal-class="modal-signin" data-modal-source="/nyc/user/register_dialog/nyc?origin=open_house&page_category=rentals&page_type=search&return_to=%2Fnyc%2Fsaved_open_houses%2Fcreate_2013%3Fdiscrete%3Dfalse%26from_listing%3Dfalse%26open_house%3D9427303" data-toggle="modal" rel="nofollow"><i class='icon-calendar'></i>&nbsp; Add to planner</a>
+  </span>
+
+        </span>
+      </div>
+
+
+
+  </div>
+</div>
+
+
+
+<div id="listing_1854006" class="item" data-id="1854006" se:behavior='selectable hoverable clickable rememberable mappable' se:map='map' se:map:point='40.7405,-74.0039' data-blockindex='0' se:map='map' se:map:point='40.7405,-74.0039' >
+  <div class='banner no_fee'></div>
+
+  <div class="photo">
+    <div id='saved_banner_Rental-1854006' class='banner saved unsaved'></div>
+
+    <a href="/building/329-west-14-street-new_york/e1" data-gtm-listing-id="1854006" data-gtm-listing-type="rental" data-gtm-regular-listing="true"><img alt="329 West 14th Street" border="0" class="lazy" data-original="http://cdn-img1.streeteasy.com/nyc/image/89/220180889.jpg" data-performance-mark="search.Rentals.listingImageVisible" src="//cdn-assets3.streeteasy.com/assets/placeholder-6c0ccc2d8787f5b1186928095e6a6456.png" /></a>
+  </div>
+
+
+  <div class="details row">
+    <div class="details-title">
+      <a href="/building/329-west-14-street-new_york/e1" data-gtm-listing-id="1854006" data-gtm-listing-type="rental" data-gtm-regular-listing="true" se:clickable:target="true">329 West 14th Street #E1</a>
+
+        <div class="item_tools hidden-xs">
+
+  <a href="#" class="button button-tool hide-text" data-gtm-item-id="1854006" data-gtm-item-type="Rental" data-gtm-item="rental" data-gtm-login-required="true" data-gtm-origin="save" data-gtm-page-category="" data-gtm-page-type="search" data-gtm-rendered-from="add_entry_link_2013" data-gtm-track-save-item-type="false" data-modal-class="modal-signin" data-modal-source="/nyc/user/register_dialog/nyc?item=Rental&item_id=1854006&origin=save&page_category=&page_type=search&return_to=%2Ffolders%2F-%2Fadd_entry_dialog_2013%3Fentry%255Bitem_id%255D%3D1854006%26entry%255Bitem_type%255D%3DRental%26lnf_mode%3D2013%26quick_save%3Dtrue%26saved_in_folders_info%3Dtrue&return_to_save_search=add_folder_entry_Rental_1854006_link" data-toggle="modal" id="add_folder_entry_Rental_1854006_link" rel="nofollow"><i class='icon-star' data-gtm-item-type=Rental data-gtm-item-id=1854006 data-gtm-track-save-item-type=false></i> SAVE</a>
+
+
+
+        </div>
+    </div>
+
+    <div class="price-info">
+
+        <span class='price'>$2,250</span>
+        <span class='secondary_text'>for rent</span>
+    </div>
+
+
+
+    <div class='details_info'><span class='first_detail_cell'>1 bath</span></div>
+    <div class="details_info">
+      Rental Unit in <a href='/neighborhoods/chelsea/'>Chelsea</a>    </div>
+
+
+
+
+
+  </div>
+</div>
+
+<div id="listing_1851160" class="item" data-id="1851160" se:behavior='selectable hoverable clickable rememberable mappable' se:map='map' se:map:point='40.7382,-74.0017' data-blockindex='0' se:map='map' se:map:point='40.7382,-74.0017' >
+  <div class='banner no_fee'></div>
+
+  <div class="photo">
+    <div id='saved_banner_Rental-1851160' class='banner saved unsaved'></div>
+
+    <a href="/building/102-greenwich-avenue-new_york/10" data-gtm-listing-id="1851160" data-gtm-listing-type="rental" data-gtm-regular-listing="true"><img alt="102 Greenwich Avenue" border="0" class="lazy" data-original="http://cdn-img0.streeteasy.com/nyc/image/88/219659288.jpg" data-performance-mark="search.Rentals.listingImageVisible" src="//cdn-assets0.streeteasy.com/assets/placeholder-6c0ccc2d8787f5b1186928095e6a6456.png" /></a>
+  </div>
+
+
+  <div class="details row">
+    <div class="details-title">
+      <a href="/building/102-greenwich-avenue-new_york/10" data-gtm-listing-id="1851160" data-gtm-listing-type="rental" data-gtm-regular-listing="true" se:clickable:target="true">102 Greenwich Avenue #10</a>
+
+        <div class="item_tools hidden-xs">
+
+  <a href="#" class="button button-tool hide-text" data-gtm-item-id="1851160" data-gtm-item-type="Rental" data-gtm-item="rental" data-gtm-login-required="true" data-gtm-origin="save" data-gtm-page-category="" data-gtm-page-type="search" data-gtm-rendered-from="add_entry_link_2013" data-gtm-track-save-item-type="false" data-modal-class="modal-signin" data-modal-source="/nyc/user/register_dialog/nyc?item=Rental&item_id=1851160&origin=save&page_category=&page_type=search&return_to=%2Ffolders%2F-%2Fadd_entry_dialog_2013%3Fentry%255Bitem_id%255D%3D1851160%26entry%255Bitem_type%255D%3DRental%26lnf_mode%3D2013%26quick_save%3Dtrue%26saved_in_folders_info%3Dtrue&return_to_save_search=add_folder_entry_Rental_1851160_link" data-toggle="modal" id="add_folder_entry_Rental_1851160_link" rel="nofollow"><i class='icon-star' data-gtm-item-type=Rental data-gtm-item-id=1851160 data-gtm-track-save-item-type=false></i> SAVE</a>
+
+
+
+        </div>
+    </div>
+
+    <div class="price-info">
+
+        <span class='price'>$2,150</span>
+        <span class='secondary_text'>for rent</span>
+    </div>
+
+
+
+
+    <div class="details_info">
+      Rental Unit in <a href='/neighborhoods/west-village/'>West Village</a>    </div>
+
+
+
+
+
+  </div>
+</div>
+
+<div id="listing_1844584" class="item" data-id="1844584" se:behavior='selectable hoverable clickable rememberable mappable' se:map='map' se:map:point='40.7411,-73.9902' data-blockindex='0' se:map='map' se:map:point='40.7411,-73.9902' >
+  <div class='banner no_fee'></div>
+
+  <div class="photo">
+    <div id='saved_banner_Rental-1844584' class='banner saved unsaved'></div>
+
+    <a href="/building/172-5-avenue-manhattan/6a" data-gtm-listing-id="1844584" data-gtm-listing-type="rental" data-gtm-regular-listing="true"><img alt="172 Fifth Avenue" border="0" class="lazy" data-original="http://cdn-img1.streeteasy.com/nyc/image/93/219461693.jpg" data-performance-mark="search.Rentals.listingImageVisible" src="//cdn-assets0.streeteasy.com/assets/placeholder-6c0ccc2d8787f5b1186928095e6a6456.png" /></a>
+  </div>
+
+
+  <div class="details row">
+    <div class="details-title">
+      <a href="/building/172-5-avenue-manhattan/6a" data-gtm-listing-id="1844584" data-gtm-listing-type="rental" data-gtm-regular-listing="true" se:clickable:target="true">172 Fifth Avenue #6A</a>
+
+        <div class="item_tools hidden-xs">
+
+  <a href="#" class="button button-tool hide-text" data-gtm-item-id="1844584" data-gtm-item-type="Rental" data-gtm-item="rental" data-gtm-login-required="true" data-gtm-origin="save" data-gtm-page-category="" data-gtm-page-type="search" data-gtm-rendered-from="add_entry_link_2013" data-gtm-track-save-item-type="false" data-modal-class="modal-signin" data-modal-source="/nyc/user/register_dialog/nyc?item=Rental&item_id=1844584&origin=save&page_category=&page_type=search&return_to=%2Ffolders%2F-%2Fadd_entry_dialog_2013%3Fentry%255Bitem_id%255D%3D1844584%26entry%255Bitem_type%255D%3DRental%26lnf_mode%3D2013%26quick_save%3Dtrue%26saved_in_folders_info%3Dtrue&return_to_save_search=add_folder_entry_Rental_1844584_link" data-toggle="modal" id="add_folder_entry_Rental_1844584_link" rel="nofollow"><i class='icon-star' data-gtm-item-type=Rental data-gtm-item-id=1844584 data-gtm-track-save-item-type=false></i> SAVE</a>
+
+
+
+        </div>
+    </div>
+
+    <div class="price-info">
+        <span class='price_arrow'>↓</span>
+        <span class='price'>$2,350</span>
+        <span class='secondary_text'>for rent</span>
+    </div>
+
+
+
+    <div class='details_info'><span class='first_detail_cell'>1 bath</span></div>
+    <div class="details_info">
+      Rental Unit in Flatiron    </div>
+
+
+
+
+
+  </div>
+</div>
+
+<div id="listing_1838492" class="item" data-id="1838492" se:behavior='selectable hoverable clickable rememberable mappable' se:map='map' se:map:point='40.7404,-74.0007' data-blockindex='0' se:map='map' se:map:point='40.7404,-74.0007' >
+  <div class='banner no_fee'></div>
+
+  <div class="photo">
+    <div id='saved_banner_Rental-1838492' class='banner saved unsaved'></div>
+
+    <a href="/building/240-west-16-street-new_york/d2" data-gtm-listing-id="1838492" data-gtm-listing-type="rental" data-gtm-regular-listing="true"><img alt="240 W 16th" border="0" class="lazy" data-original="http://cdn-img1.streeteasy.com/nyc/image/69/218127169.jpg" data-performance-mark="search.Rentals.listingImageVisible" src="//cdn-assets2.streeteasy.com/assets/placeholder-6c0ccc2d8787f5b1186928095e6a6456.png" /></a>
+  </div>
+
+
+  <div class="details row">
+    <div class="details-title">
+      <a href="/building/240-west-16-street-new_york/d2" data-gtm-listing-id="1838492" data-gtm-listing-type="rental" data-gtm-regular-listing="true" se:clickable:target="true">240 W 16th #D2</a>
+
+        <div class="item_tools hidden-xs">
+
+  <a href="#" class="button button-tool hide-text" data-gtm-item-id="1838492" data-gtm-item-type="Rental" data-gtm-item="rental" data-gtm-login-required="true" data-gtm-origin="save" data-gtm-page-category="" data-gtm-page-type="search" data-gtm-rendered-from="add_entry_link_2013" data-gtm-track-save-item-type="false" data-modal-class="modal-signin" data-modal-source="/nyc/user/register_dialog/nyc?item=Rental&item_id=1838492&origin=save&page_category=&page_type=search&return_to=%2Ffolders%2F-%2Fadd_entry_dialog_2013%3Fentry%255Bitem_id%255D%3D1838492%26entry%255Bitem_type%255D%3DRental%26lnf_mode%3D2013%26quick_save%3Dtrue%26saved_in_folders_info%3Dtrue&return_to_save_search=add_folder_entry_Rental_1838492_link" data-toggle="modal" id="add_folder_entry_Rental_1838492_link" rel="nofollow"><i class='icon-star' data-gtm-item-type=Rental data-gtm-item-id=1838492 data-gtm-track-save-item-type=false></i> SAVE</a>
+
+
+
+        </div>
+    </div>
+
+    <div class="price-info">
+
+        <span class='price'>$2,300</span>
+        <span class='secondary_text'>for rent</span>
+    </div>
+
+
+
+    <div class='details_info'><span class='first_detail_cell'>1 bath</span></div>
+    <div class="details_info">
+      Rental Unit in <a href='/neighborhoods/chelsea/'>Chelsea</a>    </div>
+
+
+      <div class="details_info">
+        <b>Open House: </b>
+        Tue, Aug 2&nbsp
+
+          3:00 PM - 4:00 PM
+
+        <span class="hidden-sm hidden-xs">
+            <span id='save_OpenHouse_9427287' class='hidden-xs'>
+      <a href="#" class="button button-tool button-discrete" data-gtm-login-required="true" data-gtm-origin="open_house" data-gtm-rendered-from="save_open_house_2014" data-modal-class="modal-signin" data-modal-source="/nyc/user/register_dialog/nyc?origin=open_house&page_category=rentals&page_type=search&return_to=%2Fnyc%2Fsaved_open_houses%2Fcreate_2013%3Fdiscrete%3Dfalse%26from_listing%3Dfalse%26open_house%3D9427287" data-toggle="modal" rel="nofollow"><i class='icon-calendar'></i>&nbsp; Add to planner</a>
+  </span>
+
+        </span>
+      </div>
+
+
+
+  </div>
+</div>
+
+<div id="listing_1832988" class="item" data-id="1832988" se:behavior='selectable hoverable clickable rememberable mappable' se:map='map' se:map:point='40.7404,-74.0007' data-blockindex='0' se:map='map' se:map:point='40.7404,-74.0007' >
+  <div class='banner no_fee'></div>
+
+  <div class="photo">
+    <div id='saved_banner_Rental-1832988' class='banner saved unsaved'></div>
+
+    <a href="/building/240-west-16-street-new_york/b4" data-gtm-listing-id="1832988" data-gtm-listing-type="rental" data-gtm-regular-listing="true"><img alt="240 West 16th Street" border="0" class="lazy" data-original="http://cdn-img3.streeteasy.com/nyc/image/11/218019711.jpg" data-performance-mark="search.Rentals.listingImageVisible" src="//cdn-assets3.streeteasy.com/assets/placeholder-6c0ccc2d8787f5b1186928095e6a6456.png" /></a>
+  </div>
+
+
+  <div class="details row">
+    <div class="details-title">
+      <a href="/building/240-west-16-street-new_york/b4" data-gtm-listing-id="1832988" data-gtm-listing-type="rental" data-gtm-regular-listing="true" se:clickable:target="true">240 West 16th Street #B4</a>
+
+        <div class="item_tools hidden-xs">
+
+  <a href="#" class="button button-tool hide-text" data-gtm-item-id="1832988" data-gtm-item-type="Rental" data-gtm-item="rental" data-gtm-login-required="true" data-gtm-origin="save" data-gtm-page-category="" data-gtm-page-type="search" data-gtm-rendered-from="add_entry_link_2013" data-gtm-track-save-item-type="false" data-modal-class="modal-signin" data-modal-source="/nyc/user/register_dialog/nyc?item=Rental&item_id=1832988&origin=save&page_category=&page_type=search&return_to=%2Ffolders%2F-%2Fadd_entry_dialog_2013%3Fentry%255Bitem_id%255D%3D1832988%26entry%255Bitem_type%255D%3DRental%26lnf_mode%3D2013%26quick_save%3Dtrue%26saved_in_folders_info%3Dtrue&return_to_save_search=add_folder_entry_Rental_1832988_link" data-toggle="modal" id="add_folder_entry_Rental_1832988_link" rel="nofollow"><i class='icon-star' data-gtm-item-type=Rental data-gtm-item-id=1832988 data-gtm-track-save-item-type=false></i> SAVE</a>
+
+
+
+        </div>
+    </div>
+
+    <div class="price-info">
+        <span class='price_arrow'>↑</span>
+        <span class='price'>$2,375</span>
+        <span class='secondary_text'>for rent</span>
+    </div>
+
+
+
+    <div class='details_info'><span class='first_detail_cell'>1 bath</span></div>
+    <div class="details_info">
+      Rental Unit in <a href='/neighborhoods/chelsea/'>Chelsea</a>    </div>
+
+
+
+
+
+  </div>
+</div>
+
+<div id="listing_1828211" class="item" data-id="1828211" se:behavior='selectable hoverable clickable rememberable mappable' se:map='map' se:map:point='40.7495,-73.9963' data-blockindex='0' se:map='map' se:map:point='40.7495,-73.9963' >
+  <div class='banner no_fee'></div>
+
+  <div class="photo">
+    <div id='saved_banner_Rental-1828211' class='banner saved unsaved'></div>
+
+    <a href="/building/307-west-29-street-new_york/1a" data-gtm-listing-id="1828211" data-gtm-listing-type="rental" data-gtm-regular-listing="true"><img alt="307 W 29th Street" border="0" class="lazy" data-original="http://cdn-img2.streeteasy.com/nyc/image/98/218138698.jpg" data-performance-mark="search.Rentals.listingImageVisible" src="//cdn-assets3.streeteasy.com/assets/placeholder-6c0ccc2d8787f5b1186928095e6a6456.png" /></a>
+  </div>
+
+
+  <div class="details row">
+    <div class="details-title">
+      <a href="/building/307-west-29-street-new_york/1a" data-gtm-listing-id="1828211" data-gtm-listing-type="rental" data-gtm-regular-listing="true" se:clickable:target="true">307 W 29th Street #1A</a>
+
+        <div class="item_tools hidden-xs">
+
+  <a href="#" class="button button-tool hide-text" data-gtm-item-id="1828211" data-gtm-item-type="Rental" data-gtm-item="rental" data-gtm-login-required="true" data-gtm-origin="save" data-gtm-page-category="" data-gtm-page-type="search" data-gtm-rendered-from="add_entry_link_2013" data-gtm-track-save-item-type="false" data-modal-class="modal-signin" data-modal-source="/nyc/user/register_dialog/nyc?item=Rental&item_id=1828211&origin=save&page_category=&page_type=search&return_to=%2Ffolders%2F-%2Fadd_entry_dialog_2013%3Fentry%255Bitem_id%255D%3D1828211%26entry%255Bitem_type%255D%3DRental%26lnf_mode%3D2013%26quick_save%3Dtrue%26saved_in_folders_info%3Dtrue&return_to_save_search=add_folder_entry_Rental_1828211_link" data-toggle="modal" id="add_folder_entry_Rental_1828211_link" rel="nofollow"><i class='icon-star' data-gtm-item-type=Rental data-gtm-item-id=1828211 data-gtm-track-save-item-type=false></i> SAVE</a>
+
+
+
+        </div>
+    </div>
+
+    <div class="price-info">
+        <span class='price_arrow'>↓</span>
+        <span class='price'>$2,400</span>
+        <span class='secondary_text'>for rent</span>
+    </div>
+
+
+
+    <div class='details_info'><span class='first_detail_cell'>1 bath</span></div>
+    <div class="details_info">
+      Rental Unit in <a href='/neighborhoods/chelsea/'>Chelsea</a>    </div>
+
+
+
+
+
+  </div>
+</div>
+
+<div id="listing_1828212" class="item" data-id="1828212" se:behavior='selectable hoverable clickable rememberable mappable' se:map='map' se:map:point='40.7495,-73.9963' data-blockindex='0' se:map='map' se:map:point='40.7495,-73.9963' >
+  <div class='banner no_fee'></div>
+
+  <div class="photo">
+    <div id='saved_banner_Rental-1828212' class='banner saved unsaved'></div>
+
+    <a href="/building/307-west-29-street-new_york/4a" data-gtm-listing-id="1828212" data-gtm-listing-type="rental" data-gtm-regular-listing="true"><img alt="307 W 29th Street" border="0" class="lazy" data-original="http://cdn-img2.streeteasy.com/nyc/image/78/218138678.jpg" data-performance-mark="search.Rentals.listingImageVisible" src="//cdn-assets1.streeteasy.com/assets/placeholder-6c0ccc2d8787f5b1186928095e6a6456.png" /></a>
+  </div>
+
+
+  <div class="details row">
+    <div class="details-title">
+      <a href="/building/307-west-29-street-new_york/4a" data-gtm-listing-id="1828212" data-gtm-listing-type="rental" data-gtm-regular-listing="true" se:clickable:target="true">307 W 29th Street #4A</a>
+
+        <div class="item_tools hidden-xs">
+
+  <a href="#" class="button button-tool hide-text" data-gtm-item-id="1828212" data-gtm-item-type="Rental" data-gtm-item="rental" data-gtm-login-required="true" data-gtm-origin="save" data-gtm-page-category="" data-gtm-page-type="search" data-gtm-rendered-from="add_entry_link_2013" data-gtm-track-save-item-type="false" data-modal-class="modal-signin" data-modal-source="/nyc/user/register_dialog/nyc?item=Rental&item_id=1828212&origin=save&page_category=&page_type=search&return_to=%2Ffolders%2F-%2Fadd_entry_dialog_2013%3Fentry%255Bitem_id%255D%3D1828212%26entry%255Bitem_type%255D%3DRental%26lnf_mode%3D2013%26quick_save%3Dtrue%26saved_in_folders_info%3Dtrue&return_to_save_search=add_folder_entry_Rental_1828212_link" data-toggle="modal" id="add_folder_entry_Rental_1828212_link" rel="nofollow"><i class='icon-star' data-gtm-item-type=Rental data-gtm-item-id=1828212 data-gtm-track-save-item-type=false></i> SAVE</a>
+
+
+
+        </div>
+    </div>
+
+    <div class="price-info">
+        <span class='price_arrow'>↓</span>
+        <span class='price'>$2,308</span>
+        <span class='secondary_text'>for rent</span>
+    </div>
+
+
+
+    <div class='details_info'><span class='first_detail_cell'>1 bath</span></div>
+    <div class="details_info">
+      Rental Unit in <a href='/neighborhoods/chelsea/'>Chelsea</a>    </div>
+
+
+
+
+
+  </div>
+</div>
+
+
+      <div class="hidden-md">
+            <div id='b_main_p1_mobile_2' style='zoom: 1; filter: alpha(opacity=100); opacity: 1;'>
+      <script type='text/javascript'>
+        googletag.cmd.push(function() {
+          googletag.display("b_main_p1_mobile_2");
+        });
+      </script>
+    </div>
+
+      </div>
+
+      <div class="more-saved-search">
+        <p class="tip">Tip: </p>
+        <p class="tip-text">&nbspTo get instant notifications of new listings,&nbsp</p>
+
+        <span class="nobreak">
+
+    <a href="#" data-gtm-item-id="21744358" data-gtm-item-type="Search" data-gtm-item="search" data-gtm-login-required="true" data-gtm-origin="save_footer" data-gtm-page-category="" data-gtm-page-type="search" data-gtm-rendered-from="add_entry_link_2013" data-gtm-track-save-item-type="false" data-modal-class="modal-signin" data-modal-source="/nyc/user/register_dialog/nyc?item=Search&item_id=21744358&origin=save_footer&page_category=&page_type=search&return_to=%2Ffolders%2F-%2Fadd_entry_dialog_2013%3Fentry%255Bitem_criteria%255D%3Dprice%253A1750-2400%257Carea%253A115%252C158%252C157%257Cbeds%253C%253D1%257Cno_fee%253A1%26entry%255Bitem_listing_class%255D%3DRental%26entry%255Bitem_type%255D%3DSearch%26lnf_mode%3D2013%26quick_save%3Dtrue%26saved_in_folders_info%3Dtrue&return_to_save_search=add_folder_entry_Search_21744358_link" data-toggle="modal" rel="nofollow">save this search</a>
+
+
+
+
+        </span>
+      </div>
+
+    <div class="pagination center_aligned bottom_pagination big_space">
+
+</div>
+
+  </div>
+</div>
+
+ <div id="sortModal" class="modal modal-search fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal-header-navbar" style="padding:0px;">
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-left" id="closing-id">
+              <li><a href="javascript:void(0)" data-dismiss="modal" aria-hidden="true">Close</a></li>
+            </ul>
+            <div class="navbar-title">Sort</div>
+          </div>
+        </nav>
+      </div>
+
+      <div>
+        <div>
+          <ul class="underline">
+              <li>
+                <a href="javascript:void(0)" data-value="listed_desc" se:behavior="form_submitter">
+                    <input id="listed_desc" type="radio" name="sort_by" value="listed_desc" checked/><label for="listed_desc">Newest</label>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" data-value="interesting_desc" se:behavior="form_submitter">
+                    <input id="interesting_desc" type="radio" name="sort_by" value="interesting_desc"/><label for="interesting_desc">Recently updated</label>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" data-value="price_desc" se:behavior="form_submitter">
+                    <input id="price_desc" type="radio" name="sort_by" value="price_desc"/><label for="price_desc">Most expensive</label>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" data-value="price_asc" se:behavior="form_submitter">
+                    <input id="price_asc" type="radio" name="sort_by" value="price_asc"/><label for="price_asc">Least expensive</label>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" data-value="sqft_desc" se:behavior="form_submitter">
+                    <input id="sqft_desc" type="radio" name="sort_by" value="sqft_desc"/><label for="sqft_desc">Largest</label>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" data-value="sqft_asc" se:behavior="form_submitter">
+                    <input id="sqft_asc" type="radio" name="sort_by" value="sqft_asc"/><label for="sqft_asc">Smallest</label>
+                </a>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="searchModal" class="modal modal-search fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal-header-navbar">
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-left">
+              <li>
+                <a href="#" data-dismiss="modal" aria-hidden="true">Close</a>
+              </li>
+            </ul>
+
+            <div class="navbar-title">Refine Your Search</div>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="#" se:behavior="link_form_submitter" se:link_form_submitter:form_id="#searchModal #form">
+                  Apply
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="modal-body">
+
+<form accept-charset="UTF-8" action="/nyc/rentals/edit_search_2013" class="user_input large criteria" id="form" method="post" name="1470176662" se:behavior="form_validatable_on_coordinate" se:coordinator="criteria_expander"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="NSYIGw98C4XVzWccPvWtZI52+aGvnvGOABP4pez3QRU=" /></div>  <input id="previous" name="previous" type="hidden" value="price:1750-2400|area:115,158,157|beds&lt;=1|no_fee:1" />
+
+  <div class="refine-search">
+    <div class='row'><div id="location_combo_area" class='criteria-field location'>
+  <label>Location</label>
+  <div class="area-selector">
+    <div class="area-input">
+      <ul class="area-sel-items">
+        <li id="area-text"><input type="text" id="area-txt-box" placeholder="Neighborhood  /  Address  /  Building  /  Keyword" autocomplete="off"/></li>
+      </ul>
+    </div>
+    <div class="area-list">
+      <ul class="area-items">
+          <li class="item indent-0">
+            <input type="checkbox" name="area[]" id="area-1" value="1" data-parent-id="0"  tabindex="-1"/><label class="area-label" for="area-1">NYC</label>
+          </li>
+          <li class="item indent-1">
+            <input type="checkbox" name="area[]" id="area-100" value="100" data-parent-id="1"  tabindex="-1"/><label class="area-label" for="area-100">Manhattan</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-102" value="102" data-parent-id="100"  tabindex="-1"/><label class="area-label" for="area-102">All Downtown</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-112" value="112" data-parent-id="102"  tabindex="-1"/><label class="area-label" for="area-112">Battery Park City</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-115" value="115" data-parent-id="102" checked tabindex="-1"/><label class="area-label" for="area-115">Chelsea</label>
+          </li>
+          <li class="item indent-4">
+            <input type="checkbox" name="area[]" id="area-163" value="163" data-parent-id="115"  tabindex="-1"/><label class="area-label" for="area-163">West Chelsea</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-110" value="110" data-parent-id="102"  tabindex="-1"/><label class="area-label" for="area-110">Chinatown</label>
+          </li>
+          <li class="item indent-4">
+            <input type="checkbox" name="area[]" id="area-111" value="111" data-parent-id="110"  tabindex="-1"/><label class="area-label" for="area-111">Two Bridges</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-103" value="103" data-parent-id="102"  tabindex="-1"/><label class="area-label" for="area-103">Civic Center</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-117" value="117" data-parent-id="102"  tabindex="-1"/><label class="area-label" for="area-117">East Village</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-104" value="104" data-parent-id="102"  tabindex="-1"/><label class="area-label" for="area-104">Financial District</label>
+          </li>
+          <li class="item indent-4">
+            <input type="checkbox" name="area[]" id="area-114" value="114" data-parent-id="104"  tabindex="-1"/><label class="area-label" for="area-114">Fulton/Seaport</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-158" value="158" data-parent-id="102" checked tabindex="-1"/><label class="area-label" for="area-158">Flatiron</label>
+          </li>
+          <li class="item indent-4">
+            <input type="checkbox" name="area[]" id="area-159" value="159" data-parent-id="158"  tabindex="-1"/><label class="area-label" for="area-159">NoMad</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-113" value="113" data-parent-id="102"  tabindex="-1"/><label class="area-label" for="area-113">Gramercy Park</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-116" value="116" data-parent-id="102"  tabindex="-1"/><label class="area-label" for="area-116">Greenwich Village</label>
+          </li>
+          <li class="item indent-4">
+            <input type="checkbox" name="area[]" id="area-118" value="118" data-parent-id="116"  tabindex="-1"/><label class="area-label" for="area-118">Noho</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-108" value="108" data-parent-id="102"  tabindex="-1"/><label class="area-label" for="area-108">Little Italy</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-109" value="109" data-parent-id="102"  tabindex="-1"/><label class="area-label" for="area-109">Lower East Side</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-162" value="162" data-parent-id="102"  tabindex="-1"/><label class="area-label" for="area-162">Nolita</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-107" value="107" data-parent-id="102"  tabindex="-1"/><label class="area-label" for="area-107">Soho</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-106" value="106" data-parent-id="102"  tabindex="-1"/><label class="area-label" for="area-106">Stuyvesant Town/PCV</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-105" value="105" data-parent-id="102"  tabindex="-1"/><label class="area-label" for="area-105">Tribeca</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-157" value="157" data-parent-id="102" checked tabindex="-1"/><label class="area-label" for="area-157">West Village</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-119" value="119" data-parent-id="100"  tabindex="-1"/><label class="area-label" for="area-119">All Midtown</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-121" value="121" data-parent-id="119"  tabindex="-1"/><label class="area-label" for="area-121">Central Park South</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-120" value="120" data-parent-id="119"  tabindex="-1"/><label class="area-label" for="area-120">Midtown</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-123" value="123" data-parent-id="119"  tabindex="-1"/><label class="area-label" for="area-123">Midtown East</label>
+          </li>
+          <li class="item indent-4">
+            <input type="checkbox" name="area[]" id="area-133" value="133" data-parent-id="123"  tabindex="-1"/><label class="area-label" for="area-133">Kips Bay</label>
+          </li>
+          <li class="item indent-4">
+            <input type="checkbox" name="area[]" id="area-130" value="130" data-parent-id="123"  tabindex="-1"/><label class="area-label" for="area-130">Murray Hill</label>
+          </li>
+          <li class="item indent-4">
+            <input type="checkbox" name="area[]" id="area-131" value="131" data-parent-id="123"  tabindex="-1"/><label class="area-label" for="area-131">Sutton Place</label>
+          </li>
+          <li class="item indent-4">
+            <input type="checkbox" name="area[]" id="area-132" value="132" data-parent-id="123"  tabindex="-1"/><label class="area-label" for="area-132">Turtle Bay</label>
+          </li>
+          <li class="item indent-5">
+            <input type="checkbox" name="area[]" id="area-134" value="134" data-parent-id="132"  tabindex="-1"/><label class="area-label" for="area-134">Beekman</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-122" value="122" data-parent-id="119"  tabindex="-1"/><label class="area-label" for="area-122">Midtown South</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-124" value="124" data-parent-id="119"  tabindex="-1"/><label class="area-label" for="area-124">Midtown West</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-139" value="139" data-parent-id="100"  tabindex="-1"/><label class="area-label" for="area-139">All Upper East Side</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-143" value="143" data-parent-id="139"  tabindex="-1"/><label class="area-label" for="area-143">Carnegie Hill</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-141" value="141" data-parent-id="139"  tabindex="-1"/><label class="area-label" for="area-141">Lenox Hill</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-164" value="164" data-parent-id="139"  tabindex="-1"/><label class="area-label" for="area-164">Upper Carnegie Hill</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-140" value="140" data-parent-id="139"  tabindex="-1"/><label class="area-label" for="area-140">Upper East Side</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-142" value="142" data-parent-id="139"  tabindex="-1"/><label class="area-label" for="area-142">Yorkville</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-144" value="144" data-parent-id="100"  tabindex="-1"/><label class="area-label" for="area-144">All Upper Manhattan</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-154" value="154" data-parent-id="144"  tabindex="-1"/><label class="area-label" for="area-154">Central Harlem</label>
+          </li>
+          <li class="item indent-4">
+            <input type="checkbox" name="area[]" id="area-165" value="165" data-parent-id="154"  tabindex="-1"/><label class="area-label" for="area-165">South Harlem</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-155" value="155" data-parent-id="144"  tabindex="-1"/><label class="area-label" for="area-155">East Harlem</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-148" value="148" data-parent-id="144"  tabindex="-1"/><label class="area-label" for="area-148">Hamilton Heights</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-150" value="150" data-parent-id="144"  tabindex="-1"/><label class="area-label" for="area-150">Inwood</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-161" value="161" data-parent-id="144"  tabindex="-1"/><label class="area-label" for="area-161">Manhattanville</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-226" value="226" data-parent-id="144"  tabindex="-1"/><label class="area-label" for="area-226">Marble Hill</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-149" value="149" data-parent-id="144"  tabindex="-1"/><label class="area-label" for="area-149">Washington Heights</label>
+          </li>
+          <li class="item indent-4">
+            <input type="checkbox" name="area[]" id="area-151" value="151" data-parent-id="149"  tabindex="-1"/><label class="area-label" for="area-151">Fort George</label>
+          </li>
+          <li class="item indent-4">
+            <input type="checkbox" name="area[]" id="area-145" value="145" data-parent-id="149"  tabindex="-1"/><label class="area-label" for="area-145">Hudson Heights</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-153" value="153" data-parent-id="144"  tabindex="-1"/><label class="area-label" for="area-153">West Harlem</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-135" value="135" data-parent-id="100"  tabindex="-1"/><label class="area-label" for="area-135">All Upper West Side</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-136" value="136" data-parent-id="135"  tabindex="-1"/><label class="area-label" for="area-136">Lincoln Square</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-138" value="138" data-parent-id="135"  tabindex="-1"/><label class="area-label" for="area-138">Manhattan Valley</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-147" value="147" data-parent-id="135"  tabindex="-1"/><label class="area-label" for="area-147">Morningside Heights</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-137" value="137" data-parent-id="135"  tabindex="-1"/><label class="area-label" for="area-137">Upper West Side</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-101" value="101" data-parent-id="100"  tabindex="-1"/><label class="area-label" for="area-101">Roosevelt Island</label>
+          </li>
+          <li class="item indent-1">
+            <input type="checkbox" name="area[]" id="area-300" value="300" data-parent-id="1"  tabindex="-1"/><label class="area-label" for="area-300">Brooklyn</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-336" value="336" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-336">Bath Beach</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-331" value="331" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-331">Bay Ridge</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-333" value="333" data-parent-id="331"  tabindex="-1"/><label class="area-label" for="area-333">Fort Hamilton</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-310" value="310" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-310">Bedford-Stuyvesant</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-353" value="353" data-parent-id="310"  tabindex="-1"/><label class="area-label" for="area-353">Ocean Hill</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-312" value="312" data-parent-id="310"  tabindex="-1"/><label class="area-label" for="area-312">Stuyvesant Heights</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-334" value="334" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-334">Bensonhurst</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-363" value="363" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-363">Bergen Beach</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-306" value="306" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-306">Boerum Hill</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-338" value="338" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-338">Borough Park</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-335" value="335" data-parent-id="338"  tabindex="-1"/><label class="area-label" for="area-335">Mapleton</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-342" value="342" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-342">Brighton Beach</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-305" value="305" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-305">Brooklyn Heights</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-354" value="354" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-354">Brownsville</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-313" value="313" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-313">Bushwick</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-359" value="359" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-359">Canarsie</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-321" value="321" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-321">Carroll Gardens</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-364" value="364" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-364">Clinton Hill</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-322" value="322" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-322">Cobble Hill</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-328" value="328" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-328">Columbia St Waterfront District</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-341" value="341" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-341">Coney Island</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-325" value="325" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-325">Crown Heights</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-327" value="327" data-parent-id="325"  tabindex="-1"/><label class="area-label" for="area-327">Weeksville</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-307" value="307" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-307">DUMBO</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-308" value="308" data-parent-id="307"  tabindex="-1"/><label class="area-label" for="area-308">Vinegar Hill</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-343" value="343" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-343">Ditmas Park</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-352" value="352" data-parent-id="343"  tabindex="-1"/><label class="area-label" for="area-352">Fiske Terrace</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-303" value="303" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-303">Downtown Brooklyn</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-332" value="332" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-332">Dyker Heights</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-314" value="314" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-314">East New York</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-316" value="316" data-parent-id="314"  tabindex="-1"/><label class="area-label" for="area-316">City Line</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-315" value="315" data-parent-id="314"  tabindex="-1"/><label class="area-label" for="area-315">New Lots</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-346" value="346" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-346">Flatbush</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-360" value="360" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-360">Flatlands</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-304" value="304" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-304">Fort Greene</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-370" value="370" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-370">Gerritsen Beach</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-320" value="320" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-320">Gowanus</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-337" value="337" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-337">Gravesend</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-301" value="301" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-301">Greenpoint</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-367" value="367" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-367">Greenwood</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-340" value="340" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-340">Kensington</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-350" value="350" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-350">Manhattan Beach</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-361" value="361" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-361">Marine Park</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-348" value="348" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-348">Midwood</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-362" value="362" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-362">Mill Basin</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-358" value="358" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-358">Northeast Flatbush</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-309" value="309" data-parent-id="358"  tabindex="-1"/><label class="area-label" for="area-309">Farragut</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-330" value="330" data-parent-id="358"  tabindex="-1"/><label class="area-label" for="area-330">Wingate</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-339" value="339" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-339">Ocean Parkway</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-365" value="365" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-365">Old Mill Basin</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-319" value="319" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-319">Park Slope</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-326" value="326" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-326">Prospect Heights</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-329" value="329" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-329">Prospect Lefferts Gardens</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-355" value="355" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-355">Prospect Park South</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-318" value="318" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-318">Red Hook</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-345" value="345" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-345">Seagate</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-349" value="349" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-349">Sheepshead Bay</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-344" value="344" data-parent-id="349"  tabindex="-1"/><label class="area-label" for="area-344">Homecrest</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-366" value="366" data-parent-id="349"  tabindex="-1"/><label class="area-label" for="area-366">Madison</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-317" value="317" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-317">Starrett City</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-323" value="323" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-323">Sunset Park</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-302" value="302" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-302">Williamsburg</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-373" value="373" data-parent-id="302"  tabindex="-1"/><label class="area-label" for="area-373">East Williamsburg</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-324" value="324" data-parent-id="300"  tabindex="-1"/><label class="area-label" for="area-324">Windsor Terrace</label>
+          </li>
+          <li class="item indent-1">
+            <input type="checkbox" name="area[]" id="area-400" value="400" data-parent-id="1"  tabindex="-1"/><label class="area-label" for="area-400">Queens</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-475" value="475" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-475">Alley Park</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-401" value="401" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-401">Astoria</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-431" value="431" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-431">Auburndale</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-428" value="428" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-428">Bayside</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-480" value="480" data-parent-id="428"  tabindex="-1"/><label class="area-label" for="area-480">Bay Terrace (Queens)</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-443" value="443" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-443">Bellerose</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-458" value="458" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-458">Bowne Park</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-446" value="446" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-446">Briarwood</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-479" value="479" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-479">Brookville</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-437" value="437" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-437">Cambria Heights</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-459" value="459" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-459">Clearview</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-418" value="418" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-418">College Point</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-409" value="409" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-409">Corona</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-474" value="474" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-474">Ditmars-Steinway</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-429" value="429" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-429">Douglaston</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-406" value="406" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-406">East Elmhurst</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-408" value="408" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-408">Elmhurst</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-442" value="442" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-442">Floral Park</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-416" value="416" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-416">Flushing</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-456" value="456" data-parent-id="416"  tabindex="-1"/><label class="area-label" for="area-456">East Flushing</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-457" value="457" data-parent-id="416"  tabindex="-1"/><label class="area-label" for="area-457">Murray Hill (Queens)</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-415" value="415" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-415">Forest Hills</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-419" value="419" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-419">Fresh Meadows</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-439" value="439" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-439">Glen Oaks Village</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-413" value="413" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-413">Glendale</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-453" value="453" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-453">Hillcrest</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-434" value="434" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-434">Hollis</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-425" value="425" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-425">Howard Beach</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-467" value="467" data-parent-id="425"  tabindex="-1"/><label class="area-label" for="area-467">Hamilton Beach</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-472" value="472" data-parent-id="425"  tabindex="-1"/><label class="area-label" for="area-472">Howard Park</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-470" value="470" data-parent-id="425"  tabindex="-1"/><label class="area-label" for="area-470">Lindenwood</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-471" value="471" data-parent-id="425"  tabindex="-1"/><label class="area-label" for="area-471">Old Howard Beach</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-468" value="468" data-parent-id="425"  tabindex="-1"/><label class="area-label" for="area-468">Ramblersville</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-469" value="469" data-parent-id="425"  tabindex="-1"/><label class="area-label" for="area-469">Rockwood Park</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-405" value="405" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-405">Jackson Heights</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-432" value="432" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-432">Jamaica</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-447" value="447" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-447">Jamaica Estates</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-421" value="421" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-421">Jamaica Hills</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-424" value="424" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-424">Kew Gardens</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-420" value="420" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-420">Kew Gardens Hills</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-436" value="436" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-436">Laurelton</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-430" value="430" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-430">Little Neck</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-402" value="402" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-402">Long Island City</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-478" value="478" data-parent-id="402"  tabindex="-1"/><label class="area-label" for="area-478">Hunters Point</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-410" value="410" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-410">Maspeth</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-411" value="411" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-411">Middle Village</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-449" value="449" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-449">New Hyde Park</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-407" value="407" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-407">North Corona</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-451" value="451" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-451">Oakland Gardens</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-426" value="426" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-426">Ozone Park</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-454" value="454" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-454">Pomonok</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-438" value="438" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-438">Queens Village</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-476" value="476" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-476">Queensboro Hill</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-414" value="414" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-414">Rego Park</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-423" value="423" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-423">Richmond Hill</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-412" value="412" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-412">Ridgewood</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-477" value="477" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-477">Rockaway All</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-448" value="448" data-parent-id="477"  tabindex="-1"/><label class="area-label" for="area-448">Arverne</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-462" value="462" data-parent-id="477"  tabindex="-1"/><label class="area-label" for="area-462">Bayswater</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-463" value="463" data-parent-id="477"  tabindex="-1"/><label class="area-label" for="area-463">Belle Harbor</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-464" value="464" data-parent-id="477"  tabindex="-1"/><label class="area-label" for="area-464">Breezy Point</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-441" value="441" data-parent-id="477"  tabindex="-1"/><label class="area-label" for="area-441">Broad Channel</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-466" value="466" data-parent-id="477"  tabindex="-1"/><label class="area-label" for="area-466">Edgemere</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-440" value="440" data-parent-id="477"  tabindex="-1"/><label class="area-label" for="area-440">Far Rockaway</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-473" value="473" data-parent-id="477"  tabindex="-1"/><label class="area-label" for="area-473">Hammels</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-465" value="465" data-parent-id="477"  tabindex="-1"/><label class="area-label" for="area-465">Neponsit</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-452" value="452" data-parent-id="477"  tabindex="-1"/><label class="area-label" for="area-452">Rockaway Park</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-444" value="444" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-444">Rosedale</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-433" value="433" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-433">South Jamaica</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-427" value="427" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-427">South Ozone Park</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-450" value="450" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-450">South Richmond Hill</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-445" value="445" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-445">Springfield Gardens</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-435" value="435" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-435">St. Albans</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-403" value="403" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-403">Sunnyside</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-455" value="455" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-455">Utopia</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-417" value="417" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-417">Whitestone</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-461" value="461" data-parent-id="417"  tabindex="-1"/><label class="area-label" for="area-461">Beechhurst</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-460" value="460" data-parent-id="417"  tabindex="-1"/><label class="area-label" for="area-460">Malba</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-422" value="422" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-422">Woodhaven</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-404" value="404" data-parent-id="400"  tabindex="-1"/><label class="area-label" for="area-404">Woodside</label>
+          </li>
+          <li class="item indent-1">
+            <input type="checkbox" name="area[]" id="area-200" value="200" data-parent-id="1"  tabindex="-1"/><label class="area-label" for="area-200">Bronx</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-243" value="243" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-243">Baychester</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-221" value="221" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-221">Bedford Park</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-218" value="218" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-218">Belmont</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-265" value="265" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-265">Bronxwood</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-229" value="229" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-229">Castle Hill</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-236" value="236" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-236">City Island</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-234" value="234" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-234">Co-op City</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-211" value="211" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-211">Concourse</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-273" value="273" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-273">Country Club</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-209" value="209" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-209">Crotona Park East</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-216" value="216" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-216">East Tremont</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-219" value="219" data-parent-id="216"  tabindex="-1"/><label class="area-label" for="area-219">West Farms</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-246" value="246" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-246">Eastchester</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-276" value="276" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-276">Edenwald</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-214" value="214" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-214">Fordham</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-210" value="210" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-210">Highbridge</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-204" value="204" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-204">Hunts Point</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-224" value="224" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-224">Kingsbridge</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-220" value="220" data-parent-id="224"  tabindex="-1"/><label class="area-label" for="area-220">Kingsbridge Heights</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-241" value="241" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-241">Laconia</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-205" value="205" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-205">Longwood</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-202" value="202" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-202">Melrose</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-212" value="212" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-212">Morris Heights</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-237" value="237" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-237">Morris Park</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-207" value="207" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-207">Morrisania</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-208" value="208" data-parent-id="207"  tabindex="-1"/><label class="area-label" for="area-208">Claremont</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-201" value="201" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-201">Mott Haven</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-271" value="271" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-271">North New York</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-260" value="260" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-260">Norwood</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-231" value="231" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-231">Parkchester</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-233" value="233" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-233">Pelham Bay</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-266" value="266" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-266">Pelham Gardens</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-238" value="238" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-238">Pelham Parkway</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-239" value="239" data-parent-id="238"  tabindex="-1"/><label class="area-label" for="area-239">Bronxdale</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-225" value="225" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-225">Riverdale</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-227" value="227" data-parent-id="225"  tabindex="-1"/><label class="area-label" for="area-227">Fieldston</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-249" value="249" data-parent-id="225"  tabindex="-1"/><label class="area-label" for="area-249">Spuyten Duyvil</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-274" value="274" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-274">Schuylerville</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-228" value="228" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-228">Soundview</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-232" value="232" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-232">Throgs Neck</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-267" value="267" data-parent-id="232"  tabindex="-1"/><label class="area-label" for="area-267">Locust Point</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-248" value="248" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-248">Tremont</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-215" value="215" data-parent-id="248"  tabindex="-1"/><label class="area-label" for="area-215">Mt. Hope</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-213" value="213" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-213">University Heights</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-240" value="240" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-240">Van Nest</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-245" value="245" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-245">Wakefield</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-272" value="272" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-272">Westchester Village</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-235" value="235" data-parent-id="272"  tabindex="-1"/><label class="area-label" for="area-235">Westchester Square</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-242" value="242" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-242">Williamsbridge</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-244" value="244" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-244">Woodlawn</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-270" value="270" data-parent-id="200"  tabindex="-1"/><label class="area-label" for="area-270">Woodstock</label>
+          </li>
+          <li class="item indent-1">
+            <input type="checkbox" name="area[]" id="area-500" value="500" data-parent-id="1"  tabindex="-1"/><label class="area-label" for="area-500">Staten Island</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-503" value="503" data-parent-id="500"  tabindex="-1"/><label class="area-label" for="area-503">East Shore</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-510" value="510" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-510">Arrochar</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-511" value="511" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-511">Bay Terrace</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-521" value="521" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-521">Concord</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-522" value="522" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-522">Dongan Hills</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-523" value="523" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-523">Egbertville</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-526" value="526" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-526">Emerson Hill</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-527" value="527" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-527">Fort Wadsworth</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-529" value="529" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-529">Grant City</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-530" value="530" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-530">Grasmere</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-536" value="536" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-536">High Rock</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-540" value="540" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-540">Lighthouse Hill</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-542" value="542" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-542">Lower Todt Hill</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-546" value="546" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-546">Midland Beach</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-548" value="548" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-548">New Dorp</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-591" value="591" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-591">New Dorp Beach</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-550" value="550" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-550">Oakwood</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-592" value="592" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-592">Oakwood Beach</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-551" value="551" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-551">Ocean Breeze</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-552" value="552" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-552">Old Town</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-561" value="561" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-561">Richmondtown</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-568" value="568" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-568">South Beach</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-575" value="575" data-parent-id="503"  tabindex="-1"/><label class="area-label" for="area-575">Todt Hill</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-505" value="505" data-parent-id="500"  tabindex="-1"/><label class="area-label" for="area-505">Mid-Island</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-514" value="514" data-parent-id="505"  tabindex="-1"/><label class="area-label" for="area-514">Bulls Head</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-516" value="516" data-parent-id="505"  tabindex="-1"/><label class="area-label" for="area-516">Castleton Corners</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-520" value="520" data-parent-id="505"  tabindex="-1"/><label class="area-label" for="area-520">Clove Lakes</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-528" value="528" data-parent-id="505"  tabindex="-1"/><label class="area-label" for="area-528">Graniteville</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-535" value="535" data-parent-id="505"  tabindex="-1"/><label class="area-label" for="area-535">Heartland Village</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-539" value="539" data-parent-id="505"  tabindex="-1"/><label class="area-label" for="area-539">La Tourette</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-545" value="545" data-parent-id="505"  tabindex="-1"/><label class="area-label" for="area-545">Meiers Corners</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-549" value="549" data-parent-id="505"  tabindex="-1"/><label class="area-label" for="area-549">New Springville</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-564" value="564" data-parent-id="505"  tabindex="-1"/><label class="area-label" for="area-564">Royal Oak</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-573" value="573" data-parent-id="505"  tabindex="-1"/><label class="area-label" for="area-573">Sunnyside (Staten Island)</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-582" value="582" data-parent-id="505"  tabindex="-1"/><label class="area-label" for="area-582">Westerleigh</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-583" value="583" data-parent-id="505"  tabindex="-1"/><label class="area-label" for="area-583">Willowbrook</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-501" value="501" data-parent-id="500"  tabindex="-1"/><label class="area-label" for="area-501">North Shore</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-509" value="509" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-509">Arlington</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-513" value="513" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-513">Brighton Heights</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-519" value="519" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-519">Clifton</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-524" value="524" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-524">Elm Park</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-594" value="594" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-594">Fox Hills</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-533" value="533" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-533">Grymes Hill</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-537" value="537" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-537">Howland Hook</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-541" value="541" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-541">Livingston</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-543" value="543" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-543">Manor Heights</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-544" value="544" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-544">Mariners Harbor</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-547" value="547" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-547">New Brighton</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-553" value="553" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-553">Park Hill</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-555" value="555" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-555">Port Ivory</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-556" value="556" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-556">Port Richmond</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-559" value="559" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-559">Randall Manor</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-562" value="562" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-562">Rosebank</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-569" value="569" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-569">Saint George</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-570" value="570" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-570">Saint Pauls</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-565" value="565" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-565">Shore Acres</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-566" value="566" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-566">Silver Lake</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-567" value="567" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-567">Snug Harbor</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-571" value="571" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-571">Stapleton</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-572" value="572" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-572">Stapleton Heights</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-574" value="574" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-574">Sunset Hill</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-576" value="576" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-576">Tompkinsville</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-579" value="579" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-579">Ward Hill</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-580" value="580" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-580">West Brighton</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-581" value="581" data-parent-id="501"  tabindex="-1"/><label class="area-label" for="area-581">West New Brighton</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-502" value="502" data-parent-id="500"  tabindex="-1"/><label class="area-label" for="area-502">South Shore</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-507" value="507" data-parent-id="502"  tabindex="-1"/><label class="area-label" for="area-507">Annadale</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-508" value="508" data-parent-id="502"  tabindex="-1"/><label class="area-label" for="area-508">Arden Heights</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-515" value="515" data-parent-id="502"  tabindex="-1"/><label class="area-label" for="area-515">Butler Manor</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-517" value="517" data-parent-id="502"  tabindex="-1"/><label class="area-label" for="area-517">Charleston</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-525" value="525" data-parent-id="502"  tabindex="-1"/><label class="area-label" for="area-525">Eltingville</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-531" value="531" data-parent-id="502"  tabindex="-1"/><label class="area-label" for="area-531">Great Kills</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-532" value="532" data-parent-id="502"  tabindex="-1"/><label class="area-label" for="area-532">Greenridge</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-538" value="538" data-parent-id="502"  tabindex="-1"/><label class="area-label" for="area-538">Huguenot</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-590" value="590" data-parent-id="502"  tabindex="-1"/><label class="area-label" for="area-590">Huguenot Beach</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-593" value="593" data-parent-id="502"  tabindex="-1"/><label class="area-label" for="area-593">Mount Loretto</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-595" value="595" data-parent-id="502"  tabindex="-1"/><label class="area-label" for="area-595">Old Place</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-554" value="554" data-parent-id="502"  tabindex="-1"/><label class="area-label" for="area-554">Pleasant Plains</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-557" value="557" data-parent-id="502"  tabindex="-1"/><label class="area-label" for="area-557">Princes Bay</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-560" value="560" data-parent-id="502"  tabindex="-1"/><label class="area-label" for="area-560">Richmond Valley</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-563" value="563" data-parent-id="502"  tabindex="-1"/><label class="area-label" for="area-563">Rossville</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-596" value="596" data-parent-id="502"  tabindex="-1"/><label class="area-label" for="area-596">Sandy Ground</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-577" value="577" data-parent-id="502"  tabindex="-1"/><label class="area-label" for="area-577">Tottenville</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-598" value="598" data-parent-id="502"  tabindex="-1"/><label class="area-label" for="area-598">Tottenville Beach</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-584" value="584" data-parent-id="502"  tabindex="-1"/><label class="area-label" for="area-584">Woodrow</label>
+          </li>
+          <li class="item indent-2">
+            <input type="checkbox" name="area[]" id="area-504" value="504" data-parent-id="500"  tabindex="-1"/><label class="area-label" for="area-504">West Shore</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-512" value="512" data-parent-id="504"  tabindex="-1"/><label class="area-label" for="area-512">Bloomfield</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-518" value="518" data-parent-id="504"  tabindex="-1"/><label class="area-label" for="area-518">Chelsea (Staten Island)</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-597" value="597" data-parent-id="504"  tabindex="-1"/><label class="area-label" for="area-597">The Teleport</label>
+          </li>
+          <li class="item indent-3">
+            <input type="checkbox" name="area[]" id="area-578" value="578" data-parent-id="504"  tabindex="-1"/><label class="area-label" for="area-578">Travis</label>
+          </li>
+        <li class="keyword-search"></li>
+      </ul>
+      <div class="area_selector_link_more hidden-xs hidden-sm" id='area_select_more'>
+        <a href="#" data-modal-class="modal-location" data-modal-live="true" data-modal-source="/area/-/area_map_selector_dialog_2013?field=input%5Bname%3D%27area%5B%5D%27%5D" data-toggle="modal" rel="nofollow" tabindex="-1">or show all neighborhoods</a>
+      </div>
+    </div>
+  </div>
+  <input id="area-selector-perf-mark-prefix" type="hidden" value="search.Rentals.">
+</div>
+<div class="criteria-field no-fee">
+  <input checked="checked" id="no_fee" name="no_fee" type="checkbox" value="1" />
+  <label for="no_fee" class="secondary">No Fee Only</label>
+</div>
+<div class='closer'></div></div><div class='row'>
+<div id='price' class='criteria-field price rental'>
+  <label for="price_from"> Price </label>
+  <div id="monthly_price" style=''>
+    <div id="price_from_container" class="">
+      <select id="price_from" name="price_from" se:behavior="support_custom_value trigger_change_on_page_load">
+        <option value="">Any</option>
+<option value="Custom">&raquo; Custom</option>
+<option value="500">$500</option>
+<option value="750">$750</option>
+<option value="1000">$1,000</option>
+<option value="1250">$1,250</option>
+<option value="1500">$1,500</option>
+<option value="1750" selected="selected">$1,750</option>
+<option value="2000">$2,000</option>
+<option value="2500">$2,500</option>
+<option value="3000">$3,000</option>
+<option value="3500">$3,500</option>
+<option value="4000">$4,000</option>
+<option value="4500">$4,500</option>
+<option value="5000">$5,000</option>
+<option value="6000">$6,000</option>
+<option value="7000">$7,000</option>
+<option value="8000">$8,000</option>
+<option value="9000">$9,000</option>
+<option value="10000">$10,000</option>
+<option value="12500">$12,500</option>
+<option value="15000">$15,000</option>
+      </select>
+      <div id="price_from_custom_container" class="custom_container" style="display: none;">
+        <input type="text" id="price_from" name="price_from_ignore" value="$1,750" se:behavior="comma_separatable" />
+      </div>
+    </div>
+
+    <div id="price_to_text">to</div>
+
+    <div id="price_to_container" class="custom_toggle_on">
+      <select id="price_to" name='price_to' se:behavior="support_custom_value trigger_change_on_page_load">
+        <option value="">Any</option>
+<option value="Custom" selected="selected">&raquo; Custom</option>
+<option value="500">$500</option>
+<option value="750">$750</option>
+<option value="1000">$1,000</option>
+<option value="1250">$1,250</option>
+<option value="1500">$1,500</option>
+<option value="1750">$1,750</option>
+<option value="2000">$2,000</option>
+<option value="2500">$2,500</option>
+<option value="3000">$3,000</option>
+<option value="3500">$3,500</option>
+<option value="4000">$4,000</option>
+<option value="4500">$4,500</option>
+<option value="5000">$5,000</option>
+<option value="6000">$6,000</option>
+<option value="7000">$7,000</option>
+<option value="8000">$8,000</option>
+<option value="9000">$9,000</option>
+<option value="10000">$10,000</option>
+<option value="12500">$12,500</option>
+<option value="15000">$15,000</option>
+      </select>
+      <div id="price_to_custom_container" class="custom_container" style="display: block">
+        <input type="text" id="price_to" name="price_to" value="$2,400" se:behavior="comma_separatable" />
+      </div>
+    </div>
+  </div>
+</div>
+<div id='beds' class='criteria-field beds'>
+  <label for='beds'>Bedrooms</label>
+  <select name='beds' id='beds'>
+    <option value="">Any Beds</option>
+<option value="<1">Studio only</option>
+<option value="<=1" selected="selected">Studio / 1 br</option>
+<option value="1">1 bedroom</option>
+<option value="2">2 bedrooms</option>
+<option value="3">3 bedrooms</option>
+<option value="4">4 bedrooms</option>
+  </select>
+  <br />
+  <div class="shrink_wrapped" id="beds_op_container">
+    <input type="checkbox" name="beds_op" value=">=" se:behavior="field_hideable" se:hide_on_values=",<1, <=1" se:toggle_controller_selector="form#form select[name='beds']" se:element_to_toggle_selector="#beds_op_container" id="beds_or_more_checkbox" />
+    <label class='secondary' for="beds_or_more_checkbox" style='font-weight: normal;'>or more</label>
+  </div>
+</div>
+<div id='baths' class='criteria-field baths'>
+  <label for='baths'>Bathrooms</label>
+  <select name='baths' id='baths'>
+    <option value="">Any Baths</option>
+<option value=">=1">1 or more</option>
+<option value=">=1.5">1.5 or more</option>
+<option value=">=2">2 or more</option>
+<option value=">=2.5">2.5 or more</option>
+<option value=">=3">3 or more</option>
+<option value=">=3.5">3.5 or more</option>
+<option value=">=4">4 or more</option>
+  </select>
+</div>
+<div class='closer'></div></div>
+
+
+    <div class="row" style="padding-bottom: 25px; width: 105.5%; margin-left:-15px">
+      <div class="criteria-field options">
+        <div class="criteria_field one_half">
+          <div class="toggle_button_container">
+            <div class="below_fold_toggle below_fold_toggle_rental hidden"
+                 se:behavior="togglable coordinated"
+                 se:coordinator="criteria_expander"
+                 se:togglable:cssselector=".below_fold_toggle_rental">
+              <i class="icon-minus"></i>Basic Options
+            </div>
+
+            <div style="line-height:44px;">
+              <div style="float:left; margin-right: 20px; margin-left: 15px;">
+                <button type="submit" name="do_search" id="performSearch" class="button">Search</button>
+              </div>
+
+              <div class="below_fold_toggle below_fold_toggle_rental"
+                   se:behavior="togglable coordinated "
+                   se:coordinator="criteria_expander"
+                   se:togglable:cssselector=".below_fold_toggle_rental">
+
+                <i class="icon-plus"></i>Advanced Options
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit"
+              name="do_search"
+              id="performSearch"
+              class="button hidden-sm hidden-md"
+              style="margin-top: -5px; margin-bottom: 10px; margin-left: 15px;">
+              Search
+      </button>
+    </div>
+
+      <div class="save_search_upsell" style="margin-top: 20px;">
+        <p style="text-align:center;">Get instant updates on new listings:
+
+    <a href="#" data-gtm-item-id="21744358" data-gtm-item-type="Search" data-gtm-item="search" data-gtm-login-required="true" data-gtm-origin="save_refine" data-gtm-page-category="" data-gtm-page-type="search" data-gtm-rendered-from="add_entry_link_2013" data-gtm-track-save-item-type="false" data-modal-class="modal-signin" data-modal-source="/nyc/user/register_dialog/nyc?item=Search&item_id=21744358&origin=save_refine&page_category=&page_type=search&return_to=%2Ffolders%2F-%2Fadd_entry_dialog_2013%3Fentry%255Bitem_criteria%255D%3Dprice%253A1750-2400%257Carea%253A115%252C158%252C157%257Cbeds%253C%253D1%257Cno_fee%253A1%26entry%255Bitem_listing_class%255D%3DRental%26entry%255Bitem_type%255D%3DSearch%26lnf_mode%3D2013%26quick_save%3Dtrue%26saved_in_folders_info%3Dtrue&return_to_save_search=add_folder_entry_Search_21744358_link" data-toggle="modal" rel="nofollow">save this search</a>
+
+
+
+
+        </p>
+      </div>
+
+    <div class="below_fold_toggle below_fold_toggle_rental hidden"
+         se:behavior="loadable andale_coordinatable coordinated"
+         se:coordinator="criteria_expander"
+         se:url="/nyc/process/rentals/search_fields?context=rental&criteria=price%3A1750-2400%7Carea%3A115%2C158%2C157%7Cbeds%3C%3D1%7Cno_fee%3A1&criteria_group=below_fold&location=standard">
+    </div>
+  </div>
+</form>      </div>
+    </div>
+  </div>
+</div>
+
+  <section class="hidden-sm hidden-xs hidden-print" style="margin-top:60px;">
+    <div class="big_separator">
+        <div class="left_half">
+    <h2>MORE IN NYC</h2>
+      <div class="quarter last">
+      <ul>
+            <li><a href="/for-rent/manhattan">Manhattan Apartments for Rent</a></li>
+    <li><a href="/for-rent/brooklyn">Brooklyn Apartments for Rent</a></li>
+    <li><a href="/for-rent/queens">Queens Apartments for Rent</a></li>
+
+      <ul>
+    </div>
+    <div class="quarter last">
+      <ul>
+            <li><a href="/for-rent/bronx">Bronx Apartments for Rent</a></li>
+    <li><a href="/for-rent/staten-island">Staten Island Apartments for Rent</a></li>
+
+        <li><a href="/no-fee-rentals/nyc">No Fee Apartments NYC</a></li>
+      <ul>
+    </div>
+  </div>
+
+    <div class="right_half">
+      <h2>NEARBY NEIGHBORHOODS</h2>
+      <ul>
+          <div class="quarter last">
+            <li>
+              <a href="/for-rent/flatiron">Flatiron Apartments for Rent</a>
+            </li>
+          </div>
+          <div class="quarter last">
+            <li>
+              <a href="/for-rent/clinton">Clinton Apartments for Rent</a>
+            </li>
+          </div>
+          <div class="quarter last">
+            <li>
+              <a href="/for-rent/greenwich-village">Greenwich Village Apartments for Rent</a>
+            </li>
+          </div>
+          <div class="quarter last">
+            <li>
+              <a href="/for-rent/west-village">West Village Apartments for Rent</a>
+            </li>
+          </div>
+          <div class="quarter last">
+            <li>
+              <a href="/for-rent/midtown-south">Midtown South Apartments for Rent</a>
+            </li>
+          </div>
+          <div class="quarter last">
+            <li>
+              <a href="/for-rent/west-chelsea">West Chelsea Apartments for Rent</a>
+            </li>
+          </div>
+          <div class="quarter last">
+            <li>
+              <a href="/for-rent/downtown">All Downtown Apartments for Rent</a>
+            </li>
+          </div>
+      </ul>
+    </div>
+
+    </div>
+  </section>
+
+            </div>
+          </div>
+
+            <div style='line-height: 1px; height: 1px; overflow: hidden;'>
+    <script type="text/javascript">
+      var _comscore = _comscore || [];
+      _comscore.push({ c1: "2", c2: "6036206" });
+      (function() {
+        var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+        s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+        el.parentNode.insertBefore(s, el);
+      })();
+    </script>
+
+    <noscript>
+      <img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=6036206&amp;cv=2.0&amp;cj=1" />
+    </noscript>
+</div>
+
+
+          <div class='closer'></div>
+
+            <div class="footer-ad hide-print">
+                  <div id='b_main_p2' style='zoom: 1; filter: alpha(opacity=100); opacity: 1;'>
+      <script type='text/javascript'>
+        googletag.cmd.push(function() {
+          googletag.display("b_main_p2");
+        });
+      </script>
+    </div>
+
+            </div>
+
+          <div class="StickedFooter">
+    <div class="footer_block">
+      <div>
+        <div class="left_side footer_site_link">
+          <ul>
+      <li><a href="/hamptons" class="link">The Hamptons Site</a></li>
+      <li><a href="/new_jersey" class="link">New Jersey Site</a></li>
+</ul>
+
+        </div>
+        <div class='footer_links'>
+  <div>
+    <ul class='caps'>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/jobs">We're hiring!</a></li>
+    </ul>
+    <ul class='caps hidden-xs'>
+      <li><a href="http://streeteasy.com/nyc/feedback/submit_your_listings?lct=footer&amp;prd=submit_your_listing">Submit your listings</a></li>
+      <li><a href="https://streeteasy.com/advertising?site=nyc">Media Kit</a></li>
+      <li><a href="http://press.streeteasy.com" target="_blank">Press</a></li>
+    </ul>
+  </div>
+  <ul class='middle_block'>
+    <li class='hidden-xs'><a href="/zendesk/sessions/create?return_to=%2F" target="_blank">Help</a></li>
+    <li><a href="//www.zillow.com/corp/Terms.htm">Terms of Use & Privacy Policy</a></li>
+    <li class='hidden-md hidden-sm'><a href="/zendesk/sessions/create?return_to=%2F" target="_blank">Help</a></li>
+    <li class='hidden-xs'><a href="//www.zillow.com/corp/Privacy.htm#behavioralAdvertising">Ad Choice</a></li>
+  </ul>
+  <ul>
+    <li id="app_store_link" class='hidden-xs'>
+      <a class="mobile-link" href="https://app.adjust.com/twslzb">
+        <img alt="Download on the App Store" src="//cdn-assets2.streeteasy.com/images2014/mobile-upsell/appstore.png" />
+      </a>
+    </li>
+    <li id="android_link" class='hidden-xs'>
+      <a class="mobile-link" href="https://app.adjust.com/p2p50p">
+        <img alt="Download on the App Store" src="//cdn-assets3.streeteasy.com/images2014/mobile-upsell/appstore_android.png" />
+      </a>
+    </li>
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+  <footer>
+    <p>
+  Zillow Inc. Sites &copy; 2006-2016 Zillow
+  <span class="hidden-xs">
+    <span class="dot">&middot;</span>
+    <span class="only-print"><b>https://streeteasy.com/</b></span>
+    <a href="http://nytm.org/made" rel="nofollow">Made In NYC</a>
+    <span class="dot">&middot;</span>
+    Powered by Bikes, Coffee and Doughnuts.
+  </span>
+</p>
+
+  </footer>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="//cdn-assets2.streeteasy.com/assets/app-93c87ad7993356f736ef24291f8974d5.js" type="text/javascript"></script>
+          <script>
+        (function (root) {
+          root.SEDeviceType = 'desktop';
+        }(window));
+      </script>
+    <!--[if lte IE 10]>
+      <link href="//cdn-assets1.streeteasy.com/assets/app-msie-ca41d127b68d7d230efe986cb5d727f4.css" media="screen" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!--[if lte IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <script src="//cdn-assets3.streeteasy.com/assets/scripts/dynamic/google_experiment-1ec9bf158b84779904bf6f570674cd4a.js" type="text/javascript"></script>
+  </body>
+  <!-- nyc deploy 80b318d app-90d-prod -->
+</html>

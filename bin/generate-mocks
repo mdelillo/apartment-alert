@@ -1,0 +1,8 @@
+#!/bin/bash
+
+mocks_dirs=$(go list -f '{{.Dir}}' github.com/mdelillo/apartment-alert/... | grep -v /vendor/ | grep '/mocks$')
+if [[ -n $mocks_dir ]]; then
+	find $mocks_dirs -name "*.go" -exec rm {} \;
+fi
+
+go generate $(go list github.com/mdelillo/apartment-alert/... | grep -v /vendor/)
