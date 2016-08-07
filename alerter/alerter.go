@@ -28,9 +28,8 @@ func (a *Alerter) Alert(allListings []parser.Listing, seenListings []parser.List
 		}
 
 		if isNewListing {
-			emailBody += fmt.Sprintf("%s\n%s\n$%d (%s)\n%s\n\n",
+			emailBody += fmt.Sprintf("%s $%d (%s) %s\n\n",
 				listing.Title,
-				listing.Address,
 				listing.Price,
 				formatNoFee(listing.NoFee),
 				listing.Url,
