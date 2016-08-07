@@ -1,6 +1,7 @@
 package main
 
 import (
+	"math/rand"
 	"net/smtp"
 	"os"
 	"strconv"
@@ -47,6 +48,8 @@ func main() {
 			panic(err)
 		}
 		seenListings = listings
-		time.Sleep(time.Minute)
+
+		secondsToSleep := 600 + rand.Intn(60)
+		time.Sleep(time.Duration(secondsToSleep) * time.Second)
 	}
 }
