@@ -15,11 +15,6 @@ type StreetEasy struct {
 	Fetcher Fetcher
 }
 
-//go:generate mockgen -package mocks -destination mocks/fetcher.go github.com/mdelillo/apartment-alert/parser Fetcher
-type Fetcher interface {
-	Fetch(url string) (html string, err error)
-}
-
 type searchResultListing struct {
 	Price      int
 	AddrStreet string
