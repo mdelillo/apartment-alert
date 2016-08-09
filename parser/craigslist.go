@@ -10,18 +10,19 @@ import (
 
 type Craigslist struct {
 	Fetcher Fetcher
+	URL     string
 }
 
-func (s *Craigslist) GetListings(listingsUrl string) ([]Listing, error) {
+func (c *Craigslist) GetListings() ([]Listing, error) {
 	listings := make([]Listing, 0)
 
-	u, err := url.Parse(listingsUrl)
+	u, err := url.Parse(c.URL)
 	if err != nil {
 		panic(err)
 	}
 	baseUrl := u.Scheme + "://" + u.Host
 
-	listingsHtml, err := s.Fetcher.Fetch(listingsUrl)
+	listingsHtml, err := c.Fetcher.Fetch(c.URL)
 	if err != nil {
 		panic(err)
 	}
@@ -51,7 +52,7 @@ func (s *Craigslist) GetListings(listingsUrl string) ([]Listing, error) {
 			panic(err)
 		}
 
-		listingHtml, err := s.Fetcher.Fetch(baseUrl + href)
+		listingHtml, err := c.Fetcher.Fetch(baseUrl + href)
 		if err != nil {
 			panic(err)
 		}

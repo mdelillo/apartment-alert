@@ -23,6 +23,7 @@ var _ = Describe("StreetEasy Parser", func() {
 		mockFetcher = mocks.NewMockFetcher(mockCtrl)
 		streetEasyParser = &parser.StreetEasy{
 			Fetcher: mockFetcher,
+			URL:     "some-url",
 		}
 	})
 
@@ -104,7 +105,7 @@ var _ = Describe("StreetEasy Parser", func() {
 
 			mockFetcher.EXPECT().Fetch("some-url").Return(string(contents), nil)
 
-			listings, err := streetEasyParser.GetListings("some-url")
+			listings, err := streetEasyParser.GetListings()
 			Expect(err).NotTo(HaveOccurred())
 			Expect(listings).To(Equal(expectedListings))
 		})

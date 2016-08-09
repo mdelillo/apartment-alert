@@ -13,6 +13,7 @@ const BASE_URL = "https://streeteasy.com"
 
 type StreetEasy struct {
 	Fetcher Fetcher
+	URL     string
 }
 
 type searchResultListing struct {
@@ -27,10 +28,10 @@ type dataLayer struct {
 	SearchResultsListings map[string]interface{} `json:"searchResultsListings"`
 }
 
-func (s *StreetEasy) GetListings(url string) ([]Listing, error) {
+func (s *StreetEasy) GetListings() ([]Listing, error) {
 	listings := make([]Listing, 0)
 
-	html, err := s.Fetcher.Fetch(url)
+	html, err := s.Fetcher.Fetch(s.URL)
 	if err != nil {
 		panic(err)
 	}

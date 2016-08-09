@@ -23,6 +23,7 @@ var _ = Describe("Craigslist Parser", func() {
 		mockFetcher = mocks.NewMockFetcher(mockCtrl)
 		craigslistParser = &parser.Craigslist{
 			Fetcher: mockFetcher,
+			URL:     "http://newyork.craigslist.org/some-search",
 		}
 	})
 
@@ -62,7 +63,7 @@ var _ = Describe("Craigslist Parser", func() {
 			mockFetcher.EXPECT().Fetch("http://newyork.craigslist.org/mnh/abo/5714884495.html").Return(string(listing1), nil)
 			mockFetcher.EXPECT().Fetch("http://newyork.craigslist.org/mnh/abo/5691703979.html").Return(string(listing2), nil)
 
-			listings, err := craigslistParser.GetListings("http://newyork.craigslist.org/some-search")
+			listings, err := craigslistParser.GetListings()
 			Expect(err).NotTo(HaveOccurred())
 			Expect(listings).To(Equal(expectedListings))
 		})

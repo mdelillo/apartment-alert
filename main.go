@@ -24,19 +24,18 @@ func main() {
 			SendMail: smtp.SendMail,
 		},
 	}
-	streeteasy := parser.StreetEasy{
-		Fetcher: &fetcher.Fetcher{},
+	p, err := parser.New(os.Args[1], &fetcher.Fetcher{})
+	if err != nil {
+		panic(err)
 	}
 
-	url := os.Args[1]
-
-	seenListings, err := streeteasy.GetListings(url)
+	seenListings, err := p.GetListings()
 	if err != nil {
 		panic(err)
 	}
 
 	for {
-		listings, err := streeteasy.GetListings(url)
+		listings, err := p.GetListings()
 		if err != nil {
 			panic(err)
 		}
