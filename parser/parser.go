@@ -3,6 +3,7 @@ package parser
 import (
 	"errors"
 	"net/url"
+	"strings"
 
 	"github.com/mdelillo/apartment-alert/fetcher"
 )
@@ -31,11 +32,13 @@ func New(searchURL string, f *fetcher.Fetcher) (Parser, error) {
 		return nil, err
 	}
 
-	switch u.Host {
-	case "newyork.craigslist.org", "craigslist.org":
+	switch strings.Split(u.Host, ":")[0] {
+	case "newyork.craigslist.org":
 		return &Craigslist{Fetcher: f, URL: searchURL}, nil
 	case "streeteasy.com":
 		return &StreetEasy{Fetcher: f, URL: searchURL}, nil
+	case "127.0.0.1":
+		return &Localhost{Fetcher: f, URL: searchURL}, nil
 	default:
 		return nil, errors.New("no parser for " + u.Host)
 	}

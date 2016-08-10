@@ -40,6 +40,7 @@ func (a *Alerter) Alert(allListings []parser.Listing, seenListings []parser.List
 	if emailBody == "" {
 		return nil
 	}
+	fmt.Println("before Send")
 	return a.Emailer.Send(emailBody)
 }
 

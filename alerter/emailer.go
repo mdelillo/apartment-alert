@@ -13,12 +13,15 @@ type EmailAlerter struct {
 }
 
 func (e *EmailAlerter) Send(body string) error {
+	fmt.Println("trying to send " + body)
+	fmt.Printf("%+v\n", e.Config)
 	auth := smtp.PlainAuth(
 		"",
 		e.Config.SMTPUsername,
 		e.Config.SMTPPassword,
 		e.Config.SMTPHost,
 	)
+	fmt.Println("before SendMail")
 	return e.SendMail(
 		fmt.Sprintf("%s:%d", e.Config.SMTPHost, e.Config.SMTPPort),
 		auth,
