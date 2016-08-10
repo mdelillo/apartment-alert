@@ -1,9 +1,9 @@
 package main
 
 import (
-	"math/rand"
 	"net/smtp"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/mdelillo/apartment-alert/alerter"
@@ -34,6 +34,16 @@ func main() {
 		panic(err)
 	}
 
+	var secondsToSleep int
+	if os.Getenv("APARTMENT_ALERT_SLEEP") != "" {
+		secondsToSleep, err = strconv.Atoi(os.Getenv("APARTMENT_ALERT_SLEEP"))
+		if err != nil {
+			panic(err)
+		}
+	} else {
+		secondsToSleep = 600
+	}
+
 	for {
 		listings, err := p.GetListings()
 		if err != nil {
@@ -44,7 +54,6 @@ func main() {
 		}
 		seenListings = listings
 
-		secondsToSleep := 600 + rand.Intn(60)
 		time.Sleep(time.Duration(secondsToSleep) * time.Second)
 	}
 }

@@ -25,7 +25,7 @@ var _ = Describe("Parser", func() {
 			})
 		})
 
-		Context("when the URL domain is craigslist.org", func() {
+		Context("when the URL domain is newyork.craigslist.org", func() {
 			It("returns a craigslist parser", func() {
 				p, err := parser.New("http://newyork.craigslist.org/some/search", nil)
 				Expect(err).NotTo(HaveOccurred())
@@ -34,7 +34,21 @@ var _ = Describe("Parser", func() {
 				case *parser.Craigslist:
 					Expect(p.(*parser.Craigslist).URL).To(Equal("http://newyork.craigslist.org/some/search"))
 				default:
-					Fail(fmt.Sprintf("Expected StreetEasyParser, got %+v", t))
+					Fail(fmt.Sprintf("Expected CraigslistParser, got %+v", t))
+				}
+			})
+		})
+
+		Context("when the URL domain is 127.0.0.1", func() {
+			It("returns a localhost parser", func() {
+				p, err := parser.New("http://127.0.0.1:1234/search", nil)
+				Expect(err).NotTo(HaveOccurred())
+
+				switch t := p.(type) {
+				case *parser.Localhost:
+					Expect(p.(*parser.Localhost).URL).To(Equal("http://127.0.0.1:1234/search"))
+				default:
+					Fail(fmt.Sprintf("Expected LocalhostParser, got %+v", t))
 				}
 			})
 		})
