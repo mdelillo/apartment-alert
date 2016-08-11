@@ -58,15 +58,14 @@ func (s *StreetEasy) GetListings() ([]Listing, error) {
 
 		listingId, exists := s.Attr("data-gtm-listing-id")
 
-		listing := Listing{
+		listings = append(listings, Listing{
 			ID:      listingId,
 			Url:     BASE_URL + href,
 			Title:   searchResultListings[listingId].Title,
 			Price:   searchResultListings[listingId].Price,
 			Address: searchResultListings[listingId].AddrStreet + " " + searchResultListings[listingId].AddrUnit,
 			NoFee:   searchResultListings[listingId].NoFee,
-		}
-		listings = append(listings, listing)
+		})
 	})
 
 	return listings, nil

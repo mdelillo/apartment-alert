@@ -35,6 +35,8 @@ func New(searchURL string, f *fetcher.Fetcher) (Parser, error) {
 	switch strings.Split(u.Host, ":")[0] {
 	case "newyork.craigslist.org":
 		return &Craigslist{Fetcher: f, URL: searchURL}, nil
+	case "renthop.com":
+		return &RentHop{Fetcher: f, URL: searchURL}, nil
 	case "streeteasy.com":
 		return &StreetEasy{Fetcher: f, URL: searchURL}, nil
 	case "127.0.0.1":

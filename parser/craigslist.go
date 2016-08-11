@@ -64,15 +64,14 @@ func (c *Craigslist) GetListings() ([]Listing, error) {
 
 		address := listingDoc.Find("div.mapaddress").Text()
 
-		listing := Listing{
+		listings = append(listings, Listing{
 			ID:      id,
 			Url:     baseUrl + href,
 			Title:   title,
 			Price:   price,
 			Address: address,
 			NoFee:   true,
-		}
-		listings = append(listings, listing)
+		})
 	})
 
 	return listings, nil

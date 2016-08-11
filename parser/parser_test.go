@@ -39,6 +39,20 @@ var _ = Describe("Parser", func() {
 			})
 		})
 
+		Context("when the URL domain is renthop.com", func() {
+			It("returns a renthop parser", func() {
+				p, err := parser.New("http://renthop.com/some/search", nil)
+				Expect(err).NotTo(HaveOccurred())
+
+				switch t := p.(type) {
+				case *parser.RentHop:
+					Expect(p.(*parser.RentHop).URL).To(Equal("http://renthop.com/some/search"))
+				default:
+					Fail(fmt.Sprintf("Expected RentHopParser, got %+v", t))
+				}
+			})
+		})
+
 		Context("when the URL domain is 127.0.0.1", func() {
 			It("returns a localhost parser", func() {
 				p, err := parser.New("http://127.0.0.1:1234/search", nil)
