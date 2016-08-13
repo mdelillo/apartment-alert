@@ -19,6 +19,7 @@ var _ = Describe("Config", func() {
 				savedSMTPRecipient string
 				savedSMTPSender    string
 				savedSMTPUsername  string
+				savedVCAPServices  string
 			)
 
 			BeforeEach(func() {
@@ -28,6 +29,7 @@ var _ = Describe("Config", func() {
 				savedSMTPRecipient = os.Getenv("SMTP_RECIPIENT")
 				savedSMTPSender = os.Getenv("SMTP_SENDER")
 				savedSMTPUsername = os.Getenv("SMTP_USERNAME")
+				savedVCAPServices = os.Getenv("VCAP_SERVICES")
 			})
 
 			AfterEach(func() {
@@ -37,6 +39,7 @@ var _ = Describe("Config", func() {
 				os.Setenv("SMTP_RECIPIENT", savedSMTPRecipient)
 				os.Setenv("SMTP_SENDER", savedSMTPSender)
 				os.Setenv("SMTP_USERNAME", savedSMTPUsername)
+				os.Setenv("VCAP_SERVICES", savedVCAPServices)
 			})
 
 			Context("when there are SMTP environment variables", func() {
@@ -49,7 +52,7 @@ var _ = Describe("Config", func() {
 					os.Setenv("SMTP_USERNAME", "env-username")
 				})
 
-				It("uses the env vars", func() {
+				It("uses the environment variables", func() {
 					c, err := config.New()
 					Expect(err).NotTo(HaveOccurred())
 					Expect(c.SMTPHost).To(Equal("env-host"))
@@ -61,15 +64,8 @@ var _ = Describe("Config", func() {
 				})
 
 				Context("when there is a VCAP_SERVICES with sendgrid", func() {
-					var savedVCAPServices string
-
 					BeforeEach(func() {
-						savedVCAPServices = os.Getenv("VCAP_SERVICES")
 						os.Setenv("VCAP_SERVICES", `{"sendgrid":[{"credentials": {"hostname": "sendgrid-host", "username": "sendgrid-username", "password": "sendgrid-password"}}]}`)
-					})
-
-					AfterEach(func() {
-						os.Setenv("VCAP_SERVICES", savedVCAPServices)
 					})
 
 					It("uses the sendgrid credentials", func() {
@@ -85,18 +81,12 @@ var _ = Describe("Config", func() {
 				})
 
 				Context("when there is a VCAP_SERVICES without sendgrid", func() {
-					var savedVCAPServices string
-
 					BeforeEach(func() {
 						savedVCAPServices = os.Getenv("VCAP_SERVICES")
 						os.Setenv("VCAP_SERVICES", `{"some-other-service":[{"credentials": {}}]}`)
 					})
 
-					AfterEach(func() {
-						os.Setenv("VCAP_SERVICES", savedVCAPServices)
-					})
-
-					It("uses the env vars", func() {
+					It("uses the environment variables", func() {
 						c, err := config.New()
 						Expect(err).NotTo(HaveOccurred())
 						Expect(c.SMTPHost).To(Equal("env-host"))
@@ -109,7 +99,7 @@ var _ = Describe("Config", func() {
 				})
 			})
 
-			Context("when there is no sendgrid service and no env vars", func() {
+			Context("when there is no sendgrid service and no environment variables", func() {
 				BeforeEach(func() {
 					os.Setenv("SMTP_HOST", "")
 					os.Setenv("SMTP_PASSWORD", "")
@@ -128,6 +118,29 @@ var _ = Describe("Config", func() {
 					Expect(c.SMTPRecipient).To(BeEmpty())
 					Expect(c.SMTPSender).To(BeEmpty())
 					Expect(c.SMTPUsername).To(BeEmpty())
+				})
+			})
+
+			Context("when there is an error parsing VCAP_SERVICES", func() {
+				BeforeEach(func() {
+					savedVCAPServices = os.Getenv("VCAP_SERVICES")
+					os.Setenv("VCAP_SERVICES", `some-bad-vcap-services`)
+				})
+
+				It("returns an error", func() {
+					_, err := config.New()
+					Expect(err).To(MatchError("could not parse 'some-bad-vcap-services' as json"))
+				})
+			})
+
+			Context("when SMTP_PORT cannot be converted to an integer", func() {
+				BeforeEach(func() {
+					os.Setenv("SMTP_PORT", "some-bad-port")
+				})
+
+				It("returns an error", func() {
+					_, err := config.New()
+					Expect(err).To(MatchError("could not convert 'some-bad-port' to an integer"))
 				})
 			})
 		})

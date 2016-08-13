@@ -2,6 +2,7 @@ package config
 
 import (
 	"encoding/json"
+	"fmt"
 	"os"
 	"strconv"
 )
@@ -31,7 +32,7 @@ func New() (*Config, error) {
 	if os.Getenv("VCAP_SERVICES") != "" {
 		services := make(map[string][]sendgridService)
 		if err := json.Unmarshal([]byte(os.Getenv("VCAP_SERVICES")), &services); err != nil {
-			panic(err)
+			return nil, fmt.Errorf("could not parse '%s' as json", os.Getenv("VCAP_SERVICES"))
 		}
 
 		sendgridServices := services["sendgrid"]
@@ -53,7 +54,7 @@ func New() (*Config, error) {
 		if os.Getenv("SMTP_PORT") != "" {
 			port, err := strconv.Atoi(os.Getenv("SMTP_PORT"))
 			if err != nil {
-				panic(err)
+				return nil, fmt.Errorf("could not convert '%s' to an integer", os.Getenv("SMTP_PORT"))
 			}
 			c.SMTPPort = port
 		}
