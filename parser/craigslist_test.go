@@ -1,6 +1,7 @@
 package parser_test
 
 import (
+	"errors"
 	"io/ioutil"
 
 	"github.com/mdelillo/apartment-alert/parser"
@@ -66,6 +67,41 @@ var _ = Describe("Craigslist Parser", func() {
 			listings, err := craigslistParser.GetListings()
 			Expect(err).NotTo(HaveOccurred())
 			Expect(listings).To(Equal(expectedListings))
+		})
+
+		Context("when there are no listings in the HTML", func() {
+			It("returns no listings", func() {
+				mockFetcher.EXPECT().Fetch("http://newyork.craigslist.org/some-search").Return(string("<html />"), nil)
+
+				listings, err := craigslistParser.GetListings()
+				Expect(err).NotTo(HaveOccurred())
+				Expect(listings).To(BeEmpty())
+			})
+		})
+
+		Context("when the URL is not valid", func() {
+			It("returns an error", func() {
+				craigslistParser.URL = "http://[::1]bad-port"
+				_, err := craigslistParser.GetListings()
+				Expect(err).To(MatchError(`parse http://[::1]bad-port: invalid port "bad-port" after host`))
+			})
+		})
+
+		Context("when fetching the URL fails", func() {
+			It("returns an error", func() {
+				mockFetcher.EXPECT().Fetch("http://newyork.craigslist.org/some-search").Return("", errors.New("some-error"))
+				_, err := craigslistParser.GetListings()
+				Expect(err).To(MatchError("some-error"))
+			})
+		})
+
+		FContext("when a listing does not have a data-pid", func() {
+			It("returns an error", func() {
+				html := `<html><body><div class="rows"><p class="row" data-pid="1" /><div></body></html>`
+				mockFetcher.EXPECT().Fetch("http://newyork.craigslist.org/some-search").Return(html, nil)
+				_, err := craigslistParser.GetListings()
+				Expect(err).To(MatchError(`could not find data-pid attr in '<p class="row" />'`))
+			})
 		})
 	})
 })
